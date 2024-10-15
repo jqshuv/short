@@ -231,9 +231,17 @@ Project Link: [https://github.com/jqshuv/short](https://github.com/jqshuv/short)
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [Cloudflare](https://cloudflare.com) and [GitHub](https://github.com) for the amazing services.
+* [Best-README-Template](https://github.com/othneildrew/Best-README-Template) for the README template.
+* [Cloudflare Worker - Status Page](https://github.com/eidam/cf-workers-status-page) for the actions workflow inspiration.
+* [YAML Update Action](https://github.com/fjogeleit/yaml-update-action) for the actions workflow tools.
+* [Bump.sh](https://bump.sh) for the API documentation platform.
+* [Contrib.rocks](https://contrib.rocks) for the contributors badge.
+* [Shields.io](https://shields.io) for the badges.
+* [API-Fiddle](https://api-fiddle.com) for the API documentation generation.
+* [Cloudflare Workers SDK](https://github.com/cloudflare/workers-sdk) for the SDK and inspiration for code structure.
+* [Devin's Badges](https://github.com/intergrav/devins-badges) for the badges and inspiration for the logo and banner.
+* **And of course, the amazing open-source community! 🚀**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
