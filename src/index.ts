@@ -52,7 +52,7 @@ export default {
 	async fetch(request, env, ctx): Promise<Response> {
 		const requestUrl = new URL(request.url);
 		const shortCodeGet = requestUrl.pathname.slice(1);
-		let body: { shortCode?: string, redirect: string } | undefined;
+		let body: { shortcode?: string, redirect: string } | undefined;
 
 		// check if request has body and await for it to be parsed to variable body
 
@@ -61,7 +61,7 @@ export default {
 				return new Response('Bad Request', { status: 400 });
 			}
 
-			body = await request.json() as { shortCode?: string, redirect: string } || undefined;
+			body = await request.json() as { shortcode?: string, redirect: string } || undefined;
 
 			if (!body || !body.redirect) {
 				return new Response('Bad Request', { status: 400 });
@@ -75,12 +75,12 @@ export default {
 		switch (request.method) {
 			case 'POST':
 				if (!body) return new Response('Bad Request', { status: 400 });
-				const postShortCode = body.shortCode || Math.random().toString(36).slice(2, 8);
+				const postShortCode = body.shortcode || Math.random().toString(36).slice(2, 8);
 				const postRedirectUrl = body.redirect;
 
 				await env.SHORT_URLS.put(postShortCode, postRedirectUrl);
 				// response with shortCode in json
-				return new Response(JSON.stringify({ shortCode: postShortCode }), { status: 200 });
+				return new Response(JSON.stringify({ status: "succesfully_created",shortcode: postShortCode, redirect: postRedirectUrl }), { status: 201 });
 			case 'GET':
 				if (!shortCodeGet) return new Response('just redirect. - powered by jqshuv x unately.', { status: 200 });
 
@@ -92,19 +92,25 @@ export default {
 				}
 			case 'PUT':
 				if (!body) return new Response('Bad Request', { status: 400 });
-				const putShortCode = body.shortCode || Math.random().toString(36).slice(2, 8);
+				const putShortCode = body.shortcode;
 				const putRedirectUrl = body.redirect;
 
+                if (!putShortCode) return new Response('Bad Request', { status: 400 });
+
+                const existingData = await env.SHORT_URLS.get(putShortCode);
+
+                if (!existingData) return new Response('Not Found', { status: 404 })
+
 				await env.SHORT_URLS.put(putShortCode, putRedirectUrl);
-				return new Response(JSON.stringify({ shortCode: putShortCode }), { status: 200 });
+				return new Response(JSON.stringify({ status: "succesfully_updated", shortcode: putShortCode, redirect: putRedirectUrl }), { status: 200 });
 			case 'DELETE':
 				if (!body) return new Response('Bad Request', { status: 400 });
-				const deleteShortCode = body.shortCode
+				const deleteShortCode = body.shortcode
 
 				if (!deleteShortCode) return new Response('Bad Request', { status: 400 });
 
 				await env.SHORT_URLS.delete(deleteShortCode);
-				return new Response('Deleted', { status: 200 });
+				return new Response(JSON.stringify({ status: "succesfully_deleted" }), { status: 200 });
 			default:
 				return new Response('Method Not Allowed', { status: 405 });
 		}

@@ -1,0 +1,178 @@
+openapi: 3.1.0
+info:
+  title: short
+  version: 0.0.0
+  description: Short simple url shortener.
+
+servers:
+  - url: https://s.jqshuv.com
+
+paths:
+  /{shortcode}:
+    get:
+      operationId: redirectsToTheTargetUrl
+      tags:
+        - short
+      summary: Redirects to the target url
+      parameters:
+        - $ref: "#/components/parameters/shortcode"
+      responses:
+        "302":
+          description: The requested resource resides temporarily at a different URI, as
+            indicated by the Location header in the response.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+                  location:
+                    type: string
+                required:
+                  - status
+                  - message
+                  - location
+  "":
+    post:
+      operationId: createANewRedirect
+      tags:
+        - short
+      summary: Create a new redirect
+      responses:
+        "201":
+          description: Created - Resource successfully created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  shortcode:
+                    type: string
+                  redirect:
+                    type: string
+                  status:
+                    type: string
+                required:
+                  - data
+                  - shortcode
+                  - redirect
+      requestBody:
+        required: true
+        description: ""
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                redirect:
+                  type: string
+                shortcode:
+                  type: string
+              required:
+                - redirect
+      security:
+        - Authorization with Header: []
+        - Authorization with Query: []
+      parameters: []
+    put:
+      operationId: updatesAShortcode
+      tags:
+        - short
+      summary: Updates a shortcode
+      responses:
+        "200":
+          description: OK - Resource successfully updated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  shortcode:
+                    type: string
+                  redirect:
+                    type: string
+                required:
+                  - data
+                  - shortcode
+                  - redirect
+        "404":
+          $ref: "#/components/responses/NotFound"
+      requestBody:
+        required: true
+        description: Updates a redirect url.
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                shortcode:
+                  type: string
+                redirect:
+                  type: string
+              required:
+                - shortcode
+                - redirect
+      security:
+        - Authorization with Header: []
+        - Authorization with Query: []
+      parameters: []
+    delete:
+      operationId: deletesAShortcode
+      tags:
+        - short
+      summary: Deletes a shortcode
+      responses:
+        "204":
+          $ref: "#/components/responses/NoContent"
+      security:
+        - Authorization with Header: []
+        - Authorization with Query: []
+
+components:
+  parameters:
+    shortcode:
+      name: shortcode
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    Authorization with Header:
+      type: apiKey
+      name: Authorization with Header
+      in: header
+    Authorization with Query:
+      type: apiKey
+      name: Authorization with Query
+      in: query
+  responses:
+    NotFound:
+      description: The server cannot find the requested resource. The endpoint may be
+        invalid or the resource may no longer exist.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+    NoContent:
+      description: The request was successful, but there is no content to return in
+        the response.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+            required: []
+tags:
+  - name: short

@@ -33,7 +33,7 @@ describe('Hello World worker', () => {
 		const ctx = createExecutionContext();
 		const response = await worker.fetch(request, env, ctx);
 		await waitOnExecutionContext(ctx);
-		expect(response.status).toBe(200);
+		expect(response.status).toBe(201);
 	});
 
 
