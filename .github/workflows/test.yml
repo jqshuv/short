@@ -3,7 +3,8 @@ name: 🔩 Test CI
 on:
   push:
     branches: [ "main" ]
-    tags: []
+    tags-ignore:
+      - 'v*'
   pull_request:
     branches: [ "main" ]
 
