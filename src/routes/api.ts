@@ -13,7 +13,7 @@ function hasValidHeader(request: Request, env: Env): boolean {
     // Get the search parameters from the request URL.
 	const searchParams = new URL(request.url).searchParams;
 
-    // If the AUTH_SECRET is not set, return true.
+    // If the AUTH_SECRET is not set, make the API public and return true.
     if (!env.AUTH_SECRET) return true;
 
     // Check if the request has a valid Authorization header or query parameter.
