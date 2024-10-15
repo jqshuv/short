@@ -6,7 +6,7 @@
 module.exports = {
     hooks: {
         "before:bump": "node scripts/change-api-version.js ${version}",
-        "after:bump": "pnpx auto-changelog -p",
+        "after:bump": "pnpx auto-changelog -p && git add CHANGELOG.md",
     },
     git: {
         commit: true,
