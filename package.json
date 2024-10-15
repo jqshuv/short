@@ -37,5 +37,27 @@
     "vitepress": "^1.4.1",
     "vitest": "2.0.5",
     "wrangler": "^3.60.3"
+  },
+  "auto-changelog": {
+    "replaceText": {
+      "([bB]reaking:)": "",
+      "([bB]reaking change:)": "",
+      "(^[fF]eat:)": "",
+      "(^[fF]eat\\()": "\\(",
+      "(^[fF]ix:)": "",
+      "(^[fF]ix\\()": "\\(",
+      "(^[cC]hore:)": "",
+      "(^[cC]hore\\()": "\\(",
+      "(^[dD]ocs:)": "",
+      "(^[dD]ocs\\()": "\\(",
+      "(^[rR]efactor:)": "",
+      "(^[rR]efactor\\()": "\\(",
+      "(^[tT]est:)": "",
+      "(^[tT]est\\()": "\\(",
+      "(^[sS]tyle:)": "",
+      "(^[sS]tyle\\()": "\\(",
+      "(^[pP]erf:)": "",
+      "(^[pP]erf\\()": "\\("
+    }
   }
 }
