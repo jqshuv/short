@@ -70,6 +70,7 @@ jobs:
     if: github.repository == 'jqshuv/short'
     name: 📈 Change API Version
     runs-on: ubuntu-latest
+    permissions: write-all
     needs: deploy
     steps:
       - name: ⬇️ Checkout
