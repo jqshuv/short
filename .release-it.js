@@ -14,16 +14,14 @@ module.exports = {
     github: {
         release: true,
         releaseName: "${version}"
+
     },
     npm: {
         publish: false,
     },
     plugins: {
-        "@release-it/conventional-changelog": {
-            preset: {
-                name: "angular",
-            },
-            infile: "CHANGELOG.md"
-        },
+        "@release-it/keep-a-changelog": {
+            "filename": "CHANGELOG.md"
+        }
     },
 };
