@@ -7,10 +7,12 @@ compatibility_flags = ["nodejs_compat"]
 [observability]
 enabled = true
 
-[vars]
-AUTH_SECRET = "production_value"
+# Copy file to wrangler.toml and uncomment the following block if you dont use github actions
 
-[[kv_namespaces]]
-binding = "SHORT_URLS"
-id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+# [vars]
+# AUTH_SECRET = "production_value"
+
+# [[kv_namespaces]]
+# binding = "SHORT_URLS"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 

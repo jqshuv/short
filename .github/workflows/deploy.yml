@@ -45,22 +45,20 @@ jobs:
         with:
             node-version: 20.x
             cache: 'pnpm'
-      - name: 💽 Setup Enviroment 1/3
+      - name: 💽 Setup Enviroment
         run: cp wrangler.example.toml wrangler.toml
-      - name: 💽 Setup Enviroment 2/3
-        uses: sebasptsch/toml-edit-action@v1.3.0
-        with:
-          path: wrangler.toml
-          key: kv_namespaces[0].id
-          value: ${{ secrets.KV_NAMESPACE_ID }}
-      - name: 💽 Setup Enviroment 3/3
-        uses: sebasptsch/toml-edit-action@v1.3.0
-        with:
-          path: wrangler.toml
-          key: vars.AUTH_SECRET
-          value: ${{ secrets.AUTH_SECRET }}
       - name: 🌑 Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          preCommands: |
+            echo "[vars]" >> wrangler.toml
+            echo "AUTH_SECRET = \"${AUTH_SECRET}\" " >> wrangler.toml
+            echo "[[kv_namespaces]]" >> wrangler.toml
+            echo "binding = \"SHORT_URLS\"" >> wrangler.toml
+            echo "id = \"${KV_NAMESPACE_ID}\"" >> wrangler.toml
+          environment: production
+        env:
+          AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
+          KV_NAMESPACE_ID: ${{ secrets.KV_NAMESPACE_ID }}
 
