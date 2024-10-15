@@ -36,8 +36,7 @@ jobs:
         echo "binding = \"SHORT_URLS\"" >> wrangler.toml
         echo "id = \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"" >> wrangler.toml
       env:
-        AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
-        KV_NAMESPACE_ID: ${{ secrets.KV_NAMESPACE_ID }}
+        KV_NAMESPACE_ID: ${{ secrets.CF_KV_ID }}
     - name: ⚙️ Install Dependencies
       run: pnpm install --frozen-lockfile
     - name: 📋 Test

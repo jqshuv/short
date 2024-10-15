@@ -31,8 +31,7 @@ jobs:
           echo "binding = \"SHORT_URLS\"" >> wrangler.toml
           echo "id = \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"" >> wrangler.toml
         env:
-          AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
-          KV_NAMESPACE_ID: ${{ secrets.KV_NAMESPACE_ID }}
+          KV_NAMESPACE_ID: ${{ secrets.CF_KV_ID }}
       - name: ⚙️ Install Dependencies
         run: pnpm install --frozen-lockfile
       - name: 📋 Test
@@ -50,18 +49,41 @@ jobs:
         with:
           version: 9
       - name: 💽 Setup Enviroment
+        # echo "[vars]" >> wrangler.toml
+        # echo "AUTH_SECRET = \"${SHORT_API_KEY}\" " >> wrangler.toml
         run: |
           cp wrangler.example.toml wrangler.toml
-          echo "[vars]" >> wrangler.toml
-          echo "AUTH_SECRET = \"${AUTH_SECRET}\" " >> wrangler.toml
+          [ -z ${SHORT_API_KEY+x} ] && echo "No API Key" || echo "[vars]" >> wrangler.toml;
+          [ -z ${SHORT_API_KEY+x} ] && echo "No API Key" || echo "AUTH_SECRET = \"${SHORT_API_KEY}\" " >> wrangler.toml;
           echo "[[kv_namespaces]]" >> wrangler.toml
           echo "binding = \"SHORT_URLS\"" >> wrangler.toml
           echo "id = \"${KV_NAMESPACE_ID}\"" >> wrangler.toml
         env:
-          AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
-          KV_NAMESPACE_ID: ${{ secrets.KV_NAMESPACE_ID }}
+          SHORT_API_KEY: ${{ secrets.SHORT_API_KEY }}
+          KV_NAMESPACE_ID: ${{ secrets.CF_KV_ID }}
       - name: 🌑 Deploy
         uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+
+  updateapi:
+    name: 📈 Change API Version
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: ⬇️ Checkout
+        uses: actions/checkout@v4
+      - name: 🔩 Configure Version
+        run: |
+          sed -i "s/\"version\": \".*\"/\"version\": \"${GITHUB_REF#refs/tags/v}\"/" docs/api-docs.json
+      - name: 📤 Commit Version
+        run: |
+          git config --local user.email "schmitt@unately.com"
+          git config --local user.name "Joshua Schmitt"
+          git add docs/api-docs.json
+          git commit -m "📈 Update API version to ${GITHUB_REF#refs/tags/v}"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 

@@ -14,7 +14,7 @@ on:
 
 jobs:
   api-diff:
-    if: ${{ github.event_name == 'pull_request' }}
+    if: github.repository == 'jqshuv/short'
     name: 🤖 Check API diff
     runs-on: ubuntu-latest
     steps:

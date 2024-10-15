@@ -14,7 +14,7 @@ on:
 
 jobs:
   deploy-doc:
-    if: ${{ github.event_name == 'push' }}
+    if: github.repository == 'jqshuv/short'
     name: 🚀 Deploy API documentation
     runs-on: ubuntu-latest
     steps:

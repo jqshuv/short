@@ -6,6 +6,8 @@
 function hasValidHeader(request: Request, env: Env): boolean {
 	const searchParams = new URL(request.url).searchParams;
 
+    if (!env.AUTH_SECRET) return true;
+
 	if (request.headers.has('Authorization')) {
 		const authHeader = request.headers.get('Authorization');
 		if (authHeader === env.AUTH_SECRET) {
