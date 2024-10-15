@@ -65,29 +65,3 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-
-  updateapi:
-    if: github.repository == 'jqshuv/short'
-    name: 📈 Change API Version
-    runs-on: ubuntu-latest
-    permissions: write-all
-    needs: deploy
-    steps:
-      - name: ⬇️ Checkout
-        uses: actions/checkout@v4
-      - name: 🔩 Configure Version
-        uses: fjogeleit/yaml-update-action@v0.15.0
-        with:
-          valueFile: 'docs/api-docs.yaml'
-          propertyPath: 'info.version'
-          method: 'Update'
-          branch: 'main'
-          masterBranchName: 'main'
-          value: ${{ github.ref_name }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commitUserName: ${{ secrets.GH_NAME }}
-          commitUserEmail: ${{ secrets.GH_EMAIL }}
-          commitChange: true
-          message: 'refactor: update API version to ${{ github.ref_name }}'
-
-
