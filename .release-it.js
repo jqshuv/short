@@ -4,6 +4,9 @@
 // https://opensource.org/licenses/MIT
 
 module.exports = {
+    hooks: {
+        "after:bump": "npx auto-changelog -p"
+    },
     git: {
         commit: true,
         tag: true,
@@ -12,19 +15,13 @@ module.exports = {
         requireCleanWorkingDir: true,
         tagName: "v/${version}",
         tagAnnotation : "Release ${version}",
+        changelog: "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/main/templates/changelog-compact.hbs"
     },
     github: {
         release: true,
         releaseName: "${version}"
-
     },
     npm: {
         publish: false,
-    },
-    plugins: {
-        "@release-it/conventional-changelog": {
-            preset: "angular",
-            infile: "CHANGELOG.md"
-        }
-    },
+    }
 };
