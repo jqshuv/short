@@ -21,7 +21,7 @@ module.exports = {
     plugins: {
         "@release-it/conventional-changelog": {
             preset: {
-                name: "conventionalcommits",
+                name: "angular",
             },
             infile: "CHANGELOG.md"
         },
