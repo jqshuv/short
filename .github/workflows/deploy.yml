@@ -59,7 +59,8 @@ jobs:
           path: wrangler.toml
           key: vars.AUTH_SECRET
           value: ${{ secrets.AUTH_SECRET }}
-      - name: ⚙️ Install Dependencies
-        run: pnpm install --frozen-lockfile
-
+      - name: 🌑 Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
