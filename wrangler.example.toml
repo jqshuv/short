@@ -1,0 +1,16 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "short"
+main = "src/index.ts"
+compatibility_date = "2024-10-11"
+compatibility_flags = ["nodejs_compat"]
+
+[observability]
+enabled = true
+
+[vars]
+AUTH_SECRET = "production_value"
+
+[[kv_namespaces]]
+binding = "SHORT_URLS"
+id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
