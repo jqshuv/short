@@ -4,10 +4,6 @@
 // https://opensource.org/licenses/MIT
 
 module.exports = {
-    hooks: {
-        // Change version on docs/api-docs.yaml to the new version with shell command
-        "after:bump": "sed -i '' 's/version: v\/[0-9]*\.[0-9]*\.[0-9]*/version: v\/${version}/' docs/api-docs.yaml",
-    },
     git: {
         commit: true,
         tag: true,
