@@ -5,6 +5,9 @@ on:
     branches: [ "main" ]
     tags-ignore:
       - 'v/*'
+    paths-ignore:
+      - 'docs/api-docs.yaml'
+      - '.github/workflows/bump.yml'
   pull_request:
     branches: [ "main" ]
 
