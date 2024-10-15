@@ -4,10 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 export default {
-    branches: [{
-        name: 'main',
-        channel: process.env.RELEASE || 'next',
-    }],
+    branches: ['main'],
     tagFormat: 'v/${version}',
     plugins: [
         '@semantic-release/commit-analyzer',
