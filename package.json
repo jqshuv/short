@@ -2,6 +2,10 @@
   "name": "short",
   "version": "0.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jqshuv/short"
+  },
   "scripts": {
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
@@ -10,11 +14,17 @@
     "cf-typegen": "wrangler types",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "prepare": "husky",
+    "commitlint": "commitlint --edit"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.5.2",
     "@cloudflare/workers-types": "^4.20241011.0",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "husky": "^9.1.6",
+    "semantic-release": "^24.1.2",
     "typescript": "^5.5.2",
     "vitepress": "^1.4.1",
     "vitest": "2.0.5",
