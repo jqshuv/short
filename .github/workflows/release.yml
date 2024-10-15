@@ -2,6 +2,16 @@ name: 🎉 Release
 
 on:
   workflow_dispatch:
+    inputs:
+      release:
+        description: 'Release a new version'
+        required: true
+        default: 'next'
+        type: choice
+        options:
+          - 'patch'
+          - 'next'
+          - 'next-major'
 
 permissions:
   contents: read
@@ -65,4 +75,5 @@ jobs:
       - name: 🎉 Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE: ${{ github.event.inputs.release }}
         run: pnpx semantic-release
