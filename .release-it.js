@@ -16,7 +16,7 @@ module.exports = {
         requireCleanWorkingDir: true,
         tagName: "v/${version}",
         tagAnnotation : "Release ${version}",
-        changelog: "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/main/templates/changelog-compact.hbs"
+        changelog: "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/main/templates/changelog-compact.hbs pnpx auto-changelog --stdout --commit-limit false --unreleased --template https://raw.githubusercontent.com/release-it/release-it/main/templates/changelog-compact.hbs --tag-prefix=v/"
     },
     github: {
         release: true,
