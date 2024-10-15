@@ -4,12 +4,18 @@
 // https://opensource.org/licenses/MIT
 
 module.exports = {
+    hooks: {
+        // Change version on docs/api-docs.yaml to the new version with shell command
+        "before:bump": "sed -i 's/version: .*/version: ${version}/' docs/api-docs.yaml",
+    },
     git: {
         commit: true,
         tag: true,
         push: true,
         commitMessage: "chore(release): ${version}",
         requireCleanWorkingDir: true,
+        tagName: "v/${version}",
+        tagAnnotation : "Release ${version}",
     },
     github: {
         release: true,
@@ -20,8 +26,9 @@ module.exports = {
         publish: false,
     },
     plugins: {
-        "@release-it/keep-a-changelog": {
-            "filename": "CHANGELOG.md"
+        "@release-it/conventional-changelog": {
+            preset: "angular",
+            infile: "CHANGELOG.md"
         }
     },
 };
