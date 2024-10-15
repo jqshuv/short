@@ -74,15 +74,13 @@ jobs:
       - name: ⬇️ Checkout
         uses: actions/checkout@v4
       - name: 🔩 Configure Version
-        run: |
-          sed -i "s/\"version\": \".*\"/\"version\": \"${GITHUB_REF#refs/tags/v}\"/" docs/api-docs.json
-      - name: 📤 Commit Version
-        run: |
-          git config --local user.email "schmitt@unately.com"
-          git config --local user.name "Joshua Schmitt"
-          git add docs/api-docs.json
-          git commit -m "📈 Update API version to ${GITHUB_REF#refs/tags/v}"
-          git push
+        uses: fjogeleit/yaml-update-action@v0.15.0
+        with:
+          valueFile: 'docs/api-docs.json'
+          propertyPath: 'info.version'
+          value: '${GITHUB_REF#refs/tags/v}'
+          commitChange: true
+          message: 'refactor: update API version to ${GITHUB_REF#refs/tags/v}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
