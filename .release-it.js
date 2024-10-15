@@ -13,9 +13,11 @@ module.exports = {
         tag: true,
         push: true,
         commitMessage: "chore(release): ${version}",
+        commitArgs: ["-S"],
         requireCleanWorkingDir: true,
         tagName: "v/${version}",
         tagAnnotation : "Release ${version}",
+        tagArgs: ["-S"],
         changelog: "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/main/templates/changelog-compact.hbs pnpx auto-changelog --stdout --commit-limit false --unreleased --template https://raw.githubusercontent.com/release-it/release-it/main/templates/changelog-compact.hbs --tag-prefix=v/"
     },
     github: {
