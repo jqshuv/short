@@ -22,7 +22,7 @@ on:
 jobs:
   deploy-doc:
     if: ${{ github.event_name == 'push' }}
-    name: Deploy API documentation on Bump.sh
+    name: 🚀 Deploy API documentation
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout
@@ -37,7 +37,7 @@ jobs:
 
   api-diff:
     if: ${{ github.event_name == 'pull_request' }}
-    name: Check API diff on Bump.sh
+    name: 🤖 Check API diff
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout
