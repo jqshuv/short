@@ -5,6 +5,9 @@ info:
   description: Short simple url shortener.
 servers:
   - url: https://s.jqshuv.com
+    description: Production server (Secured with API Key)
+  - url: http://localhost:8787
+    description: Local development server by wrangler
 paths:
   /{shortcode}:
     get:

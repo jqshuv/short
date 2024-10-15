@@ -89,7 +89,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![short banner image][banner]
 
 The goal of this project is to create a lightweight and simple url shortener that simply runs on Cloudflare Workers and is deployed by GitHub Actions. It uses the native Cloudflare Workers SDK without any additional packreges to be as minimal and cheap as possible. Short provides a simple API to create and manage new links.
 
@@ -99,7 +99,11 @@ The goal of this project is to create a lightweight and simple url shortener tha
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
+[![Cloudflare Workers][cf-workers]][cf-workers-url] <br />
+[![GitHub Actions][gh-actions]][gh-actions-url] <br />
+[![TypeScript][ts]][ts-url] <br />
+[![Vitest][vitest]][vitest-url] <br />
+[![Prettier][prettier]][prettier-url] <br />
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -114,10 +118,10 @@ This is an explanation of how you can get your own instance of short up and runn
 
 Before you get started, you need to have a few things ready:
 
-* [Fork](https://github.com/jqshuv/short/fork) the repository to your own account **with all branches**.
+> [!CAUTION]
+> When you fork the repository **unselect** "Copy the `main` branch only" else you will only be able to use the development version.
 
-  > [!CAUTION]
-  > **Unselect** "Copy the `main` branch only" else you will only be able to use the development version.
+* [Fork](https://github.com/jqshuv/short/fork) the repository to your own account **with all branches**.
 * A Cloudflare API Key with the necessary permissions to create and manage workers.
   * Follow the instructions [here](https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/#api-token) to get your API Key.
 * A Cloudflare KV Namespace to store the links.
@@ -135,9 +139,11 @@ Before you get started, you need to have a few things ready:
    * `CF_KV_ID` - Your Cloudflare KV Namespace ID
      * To get your KV Namespace ID, go to your Cloudflare Dashboard, select your KV Namespace and copy the which is next to the name in the top left.
    * `SHORT_API_KEY` - Recommended: A random string if you want to secure your API.
+
 2. Activate GitHub Actions in your repository.
    1. Go to the `Actions` tab in your repository.
    2. Click on the green button `I understand my workflows, go ahead and enable them` to enable GitHub Actions.
+
 3. Run the workflow `🚀 Deploy`.
    1. On your repository page, click on the `Actions` tab.
    2. Click on the `🚀 Deploy` workflow on the left side.
@@ -156,9 +162,9 @@ Before you get started, you need to have a few things ready:
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Short provides a simple API to create and manage new links. The API is secured by an API key which you can set in the secrets of your repository.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For detailed documentation, please refer to the [API Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -245,7 +251,20 @@ Project Link: [https://github.com/jqshuv/short](https://github.com/jqshuv/short)
 [issues-url]: https://github.com/jqshuv/short/issues
 [license-shield]: https://img.shields.io/github/license/jqshuv/short.svg?style=for-the-badge
 [license-url]: https://github.com/jqshuv/short/blob/master/LICENSE.txt
-[product-screenshot]: .github/assets/short-banner.svg
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
+[banner]: .github/assets/short-banner.svg
 
+[cf-workers]: https://img.shields.io/badge/Cloudflare_Workers-ffffff?style=for-the-badge&logo=cloudflareworkers&logoColor=F38020
+[cf-workers-url]: https://workers.cloudflare.com/
+
+[gh-actions]: https://img.shields.io/badge/GitHub_Actions-000000?style=for-the-badge&logo=githubactions&logoColor=2088FF
+[gh-actions-url]: https://github.com/features/actions
+
+[ts]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
+[ts-url]: https://www.typescriptlang.org/
+
+[vitest]: https://img.shields.io/badge/Vitest-1b1c1e?style=for-the-badge&logo=vitest&logoColor=6E9F18
+[vitest-url]: https://vitejs.dev/
+
+
+[prettier]: https://img.shields.io/badge/Prettier-1d2a33?style=for-the-badge&logo=prettier&logoColor=F7B93E
+[prettier-url]: https://prettier.io/
