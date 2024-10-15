@@ -80,7 +80,7 @@ export default {
 
 				await env.SHORT_URLS.put(postShortCode, postRedirectUrl);
 				// response with shortCode in json
-				return new Response(JSON.stringify({ status: "succesfully_created",shortcode: postShortCode, redirect: postRedirectUrl }), { status: 201 });
+				return new Response(JSON.stringify({ status: "succesfully_created", shortcode: postShortCode, redirect: postRedirectUrl }), { status: 201 });
 			case 'GET':
 				if (!shortCodeGet) return new Response('just redirect. - powered by jqshuv x unately.', { status: 200 });
 

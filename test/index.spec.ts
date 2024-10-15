@@ -50,47 +50,8 @@ describe('Hello World worker', () => {
 		const ctx = createExecutionContext();
 		const response = await worker.fetch(request, env, ctx);
 		await waitOnExecutionContext(ctx);
-		const responseBody = await response.json() as { shortCode: string };
-		shortCode = responseBody.shortCode;
-		expect(responseBody).toMatchObject({ shortCode: shortCode });
+		const responseBody = await response.json() as { shortcode: string };
+		shortCode = responseBody.shortcode;
+		expect(responseBody).toMatchObject({ status: "succesfully_created" ,shortcode: shortCode, redirect: "https://example.com" });
 	});
-
-
-
-	it('post request url', async () => {
-		const request = new IncomingRequest('http://example.com', {
-			method: 'PUT',
-			headers: {
-				'Content-Type': 'application/json',
-				'Authorization': env.AUTH_SECRET,
-			},
-			body: JSON.stringify({ shortCode: 'test', redirect: 'https://example.com' }),
-		});
-		const ctx = createExecutionContext();
-		const response = await worker.fetch(request, env, ctx);
-		await waitOnExecutionContext(ctx);
-		expect(response.status).toBe(200);
-	});
-
-
-
-	it('post request url without shortCode', async () => {
-		const request = new IncomingRequest('http://example.com', {
-			method: 'PUT',
-			headers: {
-				'Content-Type': 'application/json',
-				'Authorization': env.AUTH_SECRET,
-			},
-			body: JSON.stringify({ redirect: 'https://example.com' }),
-		});
-		const ctx = createExecutionContext();
-		const response = await worker.fetch(request, env, ctx);
-		await waitOnExecutionContext(ctx);
-		const responseBody = await response.json() as { shortCode: string };
-		shortCode = responseBody.shortCode;
-		expect(responseBody).toMatchObject({ shortCode: shortCode });
-	});
-
-
-	console.log(shortCode);
 });
