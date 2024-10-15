@@ -77,7 +77,7 @@ jobs:
       - name: 🔩 Configure Version
         uses: fjogeleit/yaml-update-action@v0.15.0
         with:
-          valueFile: 'docs/api-docs.json'
+          valueFile: 'docs/api-docs.yaml'
           propertyPath: 'info.version'
           value: '${GITHUB_REF#refs/tags/v}'
           commitChange: true
