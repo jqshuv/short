@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "short. docs."
-  text: "Short link shortner documentation."
+  text: "short. Is a link shortner."
   tagline: My great project tagline
   actions:
     - theme: brand
