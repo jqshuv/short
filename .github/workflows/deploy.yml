@@ -1,0 +1,64 @@
+name: 🚀 Deploy
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  test:
+    name: 🧪 Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout
+        uses: actions/checkout@v4
+      - name: 📦 Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+            version: 9
+      - name: 📦 Install Node.js 20
+        uses: actions/setup-node@v4
+        with:
+            node-version: 20.x
+            cache: 'pnpm'
+      - name: 💽 Setup Enviroment
+        run: cp wrangler.example.toml wrangler.toml
+      - name: ⚙️ Install Dependencies
+        run: pnpm install --frozen-lockfile
+      - name: 📋 Test
+        run: pnpm test
+
+  deploy:
+    name: 🚀 Deploy
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: ⬇️ Checkout
+        uses: actions/checkout@v4
+      - name: 📦 Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+            version: 9
+      - name: 📦 Install Node.js 20
+        uses: actions/setup-node@v4
+        with:
+            node-version: 20.x
+            cache: 'pnpm'
+      - name: 💽 Setup Enviroment 1/3
+        run: cp wrangler.example.toml wrangler.toml
+      - name: 💽 Setup Enviroment 2/3
+        uses: ciiiii/toml-editor@1.0.0
+        with:
+          file: wrangler.toml
+          key: kv_namespaces[0].id
+          value: ${{ secrets.KV_NAMESPACE_ID }}
+      - name: 💽 Setup Enviroment 3/3
+        uses: ciiiii/toml-editor@1.0.0
+        with:
+          file: wrangler.toml
+          key: vars.AUTH_SECRET
+          value: ${{ secrets.AUTH_SECRET }}
+      - name: ⚙️ Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+
