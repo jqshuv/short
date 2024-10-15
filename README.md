@@ -7,24 +7,10 @@
 
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a id="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
 
 
 
 <!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -81,6 +67,7 @@
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#legal">Legal</a></li>
   </ol>
 </details>
 
@@ -242,6 +229,18 @@ Project Link: [https://github.com/jqshuv/short](https://github.com/jqshuv/short)
 * [Cloudflare Workers SDK](https://github.com/cloudflare/workers-sdk) for the SDK and inspiration for code structure.
 * [Devin's Badges](https://github.com/intergrav/devins-badges) for the badges and inspiration for the logo and banner.
 * **And of course, the amazing open-source community! 🚀**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- LEGAL -->
+# Legal
+* Cloudflare, the Cloudflare logo, and the Cloudflare Workers® logo are registered trademarks of Cloudflare, Inc. in the United States and other countries.
+* Cloudflare Workers® is a registered trademark of Cloudflare, Inc. in the United States and other countries.
+* GitHub, GITHUB, the GitHub logo(s), and the GitHub Actions logo are registered trademarks of GitHub, Inc. in the United States and other countries.
+
+Me and this project are not affiliated with Cloudflare, Inc. or GitHub, Inc. in any way. The use of the trademarks is only for identification and explanation purposes. The use of the trademarks does not imply any endorsement by the trademark owners. If you have any questions or concerns, please contact me at me@jqshuv.com. I do not claim any ownership of the trademarks. All rights belong to their respective owners. Thank you for your understanding.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
