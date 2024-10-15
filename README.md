@@ -114,11 +114,11 @@ This is an explanation of how you can get your own instance of short up and runn
 
 Before you get started, you need to have a few things ready:
 
-* [Fork](https://github.com/jqshuv/short/fork) the repository to your own account.
+* <a href="https://github.com/jqshuv/short/fork" target="_blank">Fork</a> the repository to your own account.
 * A Cloudflare API Key with the necessary permissions to create and manage workers.
-  * Follow the instructions [here](https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/#api-token) to get your API Key.
+  * Follow the instructions <a href="https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/#api-token" target="_blank">here</a> to get your API Key.
 * A Cloudflare KV Namespace to store the links.
-  * Follow the instructions [here](https://developers.cloudflare.com/kv/get-started/#2-create-a-kv-namespace) to create a new KV Namespace. (Recommended: Select Dashboard in the documentation)
+  * Follow the instructions <a href="https://developers.cloudflare.com/kv/get-started/#2-create-a-kv-namespace)" target="_blank">here</a> to create a new KV Namespace. (Recommended: Select Dashboard in the documentation)
 
 
 ### Deployment
