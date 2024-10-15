@@ -20,7 +20,9 @@ module.exports = {
     },
     plugins: {
         "@release-it/conventional-changelog": {
-            preset: "angular",
+            preset: {
+                name: "conventionalcommits",
+            },
             infile: "CHANGELOG.md"
         },
     },
