@@ -161,10 +161,7 @@ _For detailed documentation, please refer to the [API Documentation](https://exa
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Add a documentation page for the API.
 
 See the [open issues](https://github.com/jqshuv/short/issues) for a full list of proposed features (and known issues).
 
