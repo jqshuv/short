@@ -1,15 +1,7 @@
-/**
- * Welcome to Cloudflare Workers! This is your first worker.
- *
- * - Run `npm run dev` in your terminal to start a development server
- * - Open a browser tab at http://localhost:8787/ to see your worker in action
- * - Run `npm run deploy` to publish your worker
- *
- * Bind resources to your worker in `wrangler.toml`. After adding bindings, a type definition for the
- * `Env` object can be regenerated with `npm run cf-typegen`.
- *
- * Learn more at https://developers.cloudflare.com/workers/
- */
+// Copyright (c) 2024 Joshua Schmitt
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
 
 function hasValidHeader(request: Request, env: Env): boolean {
 	const searchParams = new URL(request.url).searchParams;
@@ -88,26 +80,26 @@ export default {
 				if (data) {
 					return Response.redirect(data, 302);
 				} else {
-					return new Response('Not Found', { status: 404 });
+					return Response.redirect('https://github.com/jqshuv/short', 302);
 				}
 			case 'PUT':
 				if (!body) return new Response('Bad Request', { status: 400 });
 				const putShortCode = body.shortcode;
 				const putRedirectUrl = body.redirect;
 
-                if (!putShortCode) return new Response('Bad Request', { status: 400 });
+                if (!putShortCode) return new Response(JSON.stringify({ status: "no_shortcode_provided" }), { status: 400 });
 
                 const existingData = await env.SHORT_URLS.get(putShortCode);
 
-                if (!existingData) return new Response('Not Found', { status: 404 })
+                if (!existingData) return new Response(JSON.stringify({ status: "shortcode_not_found" }), { status: 404 })
 
 				await env.SHORT_URLS.put(putShortCode, putRedirectUrl);
 				return new Response(JSON.stringify({ status: "succesfully_updated", shortcode: putShortCode, redirect: putRedirectUrl }), { status: 200 });
 			case 'DELETE':
-				if (!body) return new Response('Bad Request', { status: 400 });
+				if (!body) return new Response(JSON.stringify({ status: "no_body_provided" }), { status: 400 });
 				const deleteShortCode = body.shortcode
 
-				if (!deleteShortCode) return new Response('Bad Request', { status: 400 });
+				if (!deleteShortCode) return new Response(JSON.stringify({ status: "no_shortcode_provided" }), { status: 400 });
 
 				await env.SHORT_URLS.delete(deleteShortCode);
 				return new Response(JSON.stringify({ status: "succesfully_deleted" }), { status: 200 });

@@ -7,7 +7,7 @@ compatibility_flags = ["nodejs_compat"]
 [observability]
 enabled = true
 
-# Copy file to wrangler.toml and uncomment the following block if you dont use github actions
+# Copy this file to wrangler.toml and uncomment the following block if you dont use github actions
 
 # [vars]
 # AUTH_SECRET = "production_value"
