@@ -67,6 +67,7 @@ jobs:
           apiToken: ${{ secrets.CF_API_TOKEN }}
 
   updateapi:
+    if: github.repository == 'jqshuv/short'
     name: 📈 Change API Version
     runs-on: ubuntu-latest
     needs: deploy
