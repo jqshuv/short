@@ -30,7 +30,7 @@
 <h3 align="center">short.</h3>
 
   <p align="center">
-    Short is a lightweight and simple link shortener working on Cloudflare Workers.
+    Short is a lightweight and simple link shortener working on Cloudflare Workers®.
     <br />
     <a href="https://s.jqshuv.com/apidocs"><strong>Explore the docs »</strong></a>
     <br />
@@ -79,7 +79,7 @@
 
 ![short banner image][banner]
 
-The goal of this project is to create a lightweight and simple url shortener that simply runs on Cloudflare Workers and is deployed by GitHub Actions. It uses the native Cloudflare Workers SDK without any additional packreges to be as minimal and cheap as possible. Short provides a simple API to create and manage new links.
+The goal of this project is to create a lightweight and simple url shortener that simply runs on Cloudflare Workers® and is deployed by GitHub Actions. It uses the native Cloudflare Workers® SDK without any additional packreges to be as minimal and cheap as possible. Short provides a simple API to create and manage new links.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -110,9 +110,9 @@ Before you get started, you need to have a few things ready:
 > When you fork the repository **unselect** "Copy the `main` branch only" else you will only be able to use the development version.
 
 * [Fork](https://github.com/jqshuv/short/fork) the repository to your own account **with all branches**.
-* A Cloudflare API Key with the necessary permissions to create and manage workers.
+* A Cloudflare® API Key with the necessary permissions to create and manage workers.
   * Follow the instructions [here](https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/#api-token) to get your API Key.
-* A Cloudflare KV Namespace to store the links.
+* A Cloudflare® KV Namespace to store the links.
   * Follow the instructions [here](https://developers.cloudflare.com/kv/get-started/#2-create-a-kv-namespace) to create a new KV Namespace. (Recommended: Select Dashboard in the documentation)
 
 
@@ -123,9 +123,9 @@ Before you get started, you need to have a few things ready:
 > It is mandatory to follow the following steps to ensure that a stable version is deployed. If you want to deploy the development version, you can do so by selecting the `main` branch in the workflow.
 
 1. Create following secrets in your forked repository: (Settings > Secrets and variables > New Repository Secret)
-   * `CF_API_TOKEN` - Your Cloudflare API Token
+   * `CF_API_TOKEN` - Your Cloudflare® API Token
    * `CF_KV_ID` - Your Cloudflare KV Namespace ID
-     * To get your KV Namespace ID, go to your Cloudflare Dashboard, select your KV Namespace and copy the which is next to the name in the top left.
+     * To get your KV Namespace ID, go to your Cloudflare® Dashboard, select your KV Namespace and copy the which is next to the name in the top left.
    * `SHORT_API_KEY` - Recommended: A random string if you want to secure your API.
 
 2. Activate GitHub Actions in your repository.

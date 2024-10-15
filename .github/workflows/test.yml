@@ -16,7 +16,7 @@ on:
 
 jobs:
   test:
-    name: 🧪 Test
+    name: 🧪 Test short
     runs-on: ubuntu-latest
     steps:
     - name: ⬇️ Checkout
@@ -44,3 +44,24 @@ jobs:
       run: pnpm install --frozen-lockfile
     - name: 📋 Test
       run: pnpm test
+
+  docs:
+    name: 🧪 Build Documentation
+    if: github.repository == 'jqshuv/short'
+    runs-on: ubuntu-latest
+    steps:
+    - name: ⬇️ Checkout
+      uses: actions/checkout@v4
+    - name: 📦 Install pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9
+    - name: 📦 Install Node.js 20
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'pnpm'
+    - name: ⚙️ Install Dependencies
+      run: pnpm install --frozen-lockfile
+    - name: 📋 Build Docs
+      run: pnpm docs:build

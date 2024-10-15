@@ -174,3 +174,7 @@ wrangler.toml
 
 # macOS
 .DS_Store
+
+# vitepress
+docs/.vitepress/cache
+docs/.vitepress/dist
