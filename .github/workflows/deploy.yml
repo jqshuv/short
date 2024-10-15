@@ -75,6 +75,11 @@ jobs:
     steps:
       - name: ⬇️ Checkout
         uses: actions/checkout@v4
+      - name: Set env
+        # remove the v/ from the tag ${{ github.ref_name }} and assign it to RELEASE_VERSION and API_VERSION
+        run: |
+          export RELEASE_VERSION_BEFORE=${{ github.ref_name }}
+          echo "RELEASE_VERSION=${RELEASE_VERSION:2}" >> $GITHUB_ENV
       - name: 🔩 Configure Version
         uses: fjogeleit/yaml-update-action@v0.15.0
         with:
@@ -83,11 +88,11 @@ jobs:
           method: 'Update'
           branch: 'main'
           masterBranchName: 'main'
-          value: ${{ github.ref_name }}
+          value: ${{ env.RELEASE_VERSION }}
           token: ${{ secrets.GITHUB_TOKEN }}
           commitUserName: ${{ secrets.GH_NAME }}
           commitUserEmail: ${{ secrets.GH_EMAIL }}
           commitChange: true
-          message: 'refactor: update API version to ${{ github.ref_name }}'
+          message: 'refactor: update API version to ${{ env.RELEASE_VERSION }}'
 
 
