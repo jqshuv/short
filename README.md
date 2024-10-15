@@ -114,7 +114,10 @@ This is an explanation of how you can get your own instance of short up and runn
 
 Before you get started, you need to have a few things ready:
 
-* [Fork](https://github.com/jqshuv/short/fork) the repository to your own account.
+* [Fork](https://github.com/jqshuv/short/fork) the repository to your own account **with all branches**.
+
+  > [!CAUTION]
+  > **Unselect** "Copy the `main` branch only" else you will only be able to use the development version.
 * A Cloudflare API Key with the necessary permissions to create and manage workers.
   * Follow the instructions [here](https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/#api-token) to get your API Key.
 * A Cloudflare KV Namespace to store the links.
@@ -123,15 +126,28 @@ Before you get started, you need to have a few things ready:
 
 ### Deployment
 
+
+> [!IMPORTANT]
+> It is mandatory to follow the following steps to ensure that a stable version is deployed. If you want to deploy the development version, you can do so by selecting the `main` branch in the workflow.
+
 1. Create following secrets in your forked repository: (Settings > Secrets and variables > New Repository Secret)
    * `CF_API_TOKEN` - Your Cloudflare API Token
    * `CF_KV_ID` - Your Cloudflare KV Namespace ID
      * To get your KV Namespace ID, go to your Cloudflare Dashboard, select your KV Namespace and copy the which is next to the name in the top left.
    * `SHORT_API_KEY` - Recommended: A random string if you want to secure your API.
-2. Activate GitHub Actions in your repository. (Settings > Actions > General > Allow all actions and reusable workflows > Save)
-3. Run the workflow `Deploy` manually. (Actions > Deploy > Run workflow > Run workflow)
+2. Activate GitHub Actions in your repository.
+   1. Go to the `Actions` tab in your repository.
+   2. Click on the green button `I understand my workflows, go ahead and enable them` to enable GitHub Actions.
+3. Run the workflow `🚀 Deploy`.
+   1. On your repository page, click on the `Actions` tab.
+   2. Click on the `🚀 Deploy` workflow on the left side.
+   3. Click on the `Run workflow` button on the right side.
+      1. Click on the `Branch: main` dropdown.
+      2. Select the menu `Tags` in the dropdown.
+      3. Select the latest tag. (The highest in the list)
+   4. Run the workflow by clicking the green `Run workflow` button.
 
-### 🚀 All done! How simple huh? Now you can see your worker active [here](https://dash.cloudflare.com/?to=/:account/workers-and-pages) in your Cloudflare dashboard.
+#### 🚀 All done! How simple huh? Now you can see your worker active [here](https://dash.cloudflare.com/?to=/:account/workers-and-pages) in your Cloudflare dashboard.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -198,7 +214,7 @@ Distributed under the MIT License. See [`LICENSE`](https://github.com/jqshuv/sho
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Joshua Schmitt - [@jqshuv](https://github.com/jqshuv) - me@jqshuv.com
 
 Project Link: [https://github.com/jqshuv/short](https://github.com/jqshuv/short)
 
