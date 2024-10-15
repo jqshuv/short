@@ -20,7 +20,8 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "prepare": "husky",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "release": "release-it"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.5.2",
@@ -28,7 +29,7 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "husky": "^9.1.6",
-    "semantic-release": "^24.1.2",
+    "release-it": "^17.9.0",
     "typescript": "^5.5.2",
     "vitepress": "^1.4.1",
     "vitest": "2.0.5",
