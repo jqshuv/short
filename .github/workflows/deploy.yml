@@ -79,10 +79,14 @@ jobs:
         with:
           valueFile: 'docs/api-docs.yaml'
           propertyPath: 'info.version'
+          method: 'Update'
+          branch: 'main'
+          masterBranchName: 'main'
           value: '${GITHUB_REF#refs/tags/v}'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commitUserName: ${{ secrets.GH_NAME }}
+          commitUserEmail: ${{ secrets.GH_EMAIL }}
           commitChange: true
           message: 'refactor: update API version to ${GITHUB_REF#refs/tags/v}'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
