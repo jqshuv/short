@@ -1,17 +1,18 @@
-// test/index.spec.ts
-import { env, createExecutionContext, waitOnExecutionContext, SELF } from 'cloudflare:test';
+// Copyright (c) 2024 Joshua Schmitt
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
 
+import { env, createExecutionContext, waitOnExecutionContext, SELF } from 'cloudflare:test';
 import { describe, it, expect } from 'vitest';
 import worker from '../src/index';
 
-// For now, you'll need to do something like this to get a correctly-typed
-// `Request` to pass to `worker.fetch()`.
 const IncomingRequest = Request<unknown, IncomingRequestCfProperties>;
 
 describe('Hello World worker', () => {
 	var shortCode = '';
 
-	it('responds with Hello World! (unit style)', async () => {
+	it('index response', async () => {
 		const request = new IncomingRequest('http://example.com', { method: 'GET' });
 		// Create an empty context to pass to `worker.fetch()`.
 		const ctx = createExecutionContext();
@@ -22,7 +23,7 @@ describe('Hello World worker', () => {
 	});
 
 	it('post request url', async () => {
-		const request = new IncomingRequest('http://example.com', {
+		const request = new IncomingRequest('http://example.com/api', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -39,7 +40,7 @@ describe('Hello World worker', () => {
 
 
 	it('post request url without shortCode', async () => {
-		const request = new IncomingRequest('http://example.com', {
+		const request = new IncomingRequest('http://example.com/api', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

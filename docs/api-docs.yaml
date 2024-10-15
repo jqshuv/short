@@ -35,7 +35,7 @@ paths:
                   - status
                   - message
                   - location
-  "":
+  /api:
     post:
       operationId: createANewRedirect
       tags:
