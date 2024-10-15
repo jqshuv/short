@@ -1,12 +1,10 @@
 openapi: 3.1.0
 info:
   title: short
-  version: 0.0.0
+  version: ${GITHUB_REF#refs/tags/v}
   description: Short simple url shortener.
-
 servers:
   - url: https://s.jqshuv.com
-
 paths:
   /{shortcode}:
     get:
@@ -15,11 +13,10 @@ paths:
         - short
       summary: Redirects to the target url
       parameters:
-        - $ref: "#/components/parameters/shortcode"
+        - $ref: '#/components/parameters/shortcode'
       responses:
-        "302":
-          description: The requested resource resides temporarily at a different URI, as
-            indicated by the Location header in the response.
+        '302':
+          description: The requested resource resides temporarily at a different URI, as indicated by the Location header in the response.
           content:
             application/json:
               schema:
@@ -42,7 +39,7 @@ paths:
         - short
       summary: Create a new redirect
       responses:
-        "201":
+        '201':
           description: Created - Resource successfully created
           content:
             application/json:
@@ -61,7 +58,7 @@ paths:
                   - redirect
       requestBody:
         required: true
-        description: ""
+        description: ''
         content:
           application/json:
             schema:
@@ -83,7 +80,7 @@ paths:
         - short
       summary: Updates a shortcode
       responses:
-        "200":
+        '200':
           description: OK - Resource successfully updated
           content:
             application/json:
@@ -100,8 +97,8 @@ paths:
                   - data
                   - shortcode
                   - redirect
-        "404":
-          $ref: "#/components/responses/NotFound"
+        '404':
+          $ref: '#/components/responses/NotFound'
       requestBody:
         required: true
         description: Updates a redirect url.
@@ -127,12 +124,11 @@ paths:
         - short
       summary: Deletes a shortcode
       responses:
-        "204":
-          $ref: "#/components/responses/NoContent"
+        '204':
+          $ref: '#/components/responses/NoContent'
       security:
         - Authorization with Header: []
         - Authorization with Query: []
-
 components:
   parameters:
     shortcode:
@@ -152,8 +148,7 @@ components:
       in: query
   responses:
     NotFound:
-      description: The server cannot find the requested resource. The endpoint may be
-        invalid or the resource may no longer exist.
+      description: The server cannot find the requested resource. The endpoint may be invalid or the resource may no longer exist.
       content:
         application/json:
           schema:
@@ -164,8 +159,7 @@ components:
             required:
               - message
     NoContent:
-      description: The request was successful, but there is no content to return in
-        the response.
+      description: The request was successful, but there is no content to return in the response.
       content:
         application/json:
           schema:
