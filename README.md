@@ -16,6 +16,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+[![Wakatime][wakatime-shield]](wakatime-url)
 
 
 
@@ -31,14 +32,14 @@
   <p align="center">
     Short is a lightweight and simple link shortener working on Cloudflare Workers.
     <br />
-    <a href="https://github.com/jqshuv/short"><strong>Explore the docs »</strong></a>
+    <a href="https://s.jqshuv.com/apidocs"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jqshuv/short">View Demo</a>
+    <a href="https://s.jqshuv.com/github">View Demo</a>
     ·
-    <a href="https://github.com/jqshuv/short/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/jqshuv/short/issues/new?assignees=&labels=bug&projects=&template=🐛-bug-report.md&title=[BUG]%20">Report Bug</a>
     ·
-    <a href="https://github.com/jqshuv/short/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/jqshuv/short/issues/new?assignees=&labels=enhancement&projects=&template=✨-feature-request.md&title=">Request Feature</a>
   </p>
 </div>
 
@@ -248,16 +249,26 @@ Me and this project are not affiliated with Cloudflare, Inc. or GitHub, Inc. in 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[docs-url]: https://s.jqshuv.com/apidocs
+
 [contributors-shield]: https://img.shields.io/github/contributors/jqshuv/short.svg?style=for-the-badge
 [contributors-url]: https://github.com/jqshuv/short/graphs/contributors
+
 [forks-shield]: https://img.shields.io/github/forks/jqshuv/short.svg?style=for-the-badge
 [forks-url]: https://github.com/jqshuv/short/network/members
+
 [stars-shield]: https://img.shields.io/github/stars/jqshuv/short.svg?style=for-the-badge
 [stars-url]: https://github.com/jqshuv/short/stargazers
+
 [issues-shield]: https://img.shields.io/github/issues/jqshuv/short.svg?style=for-the-badge
 [issues-url]: https://github.com/jqshuv/short/issues
+
 [license-shield]: https://img.shields.io/github/license/jqshuv/short.svg?style=for-the-badge
 [license-url]: https://github.com/jqshuv/short/blob/master/LICENSE.txt
+
+[wakatime-shield]: https://wakatime.com/badge/user/b80127f3-fcf6-417a-9cdd-107757c5022f/project/691d39e9-e109-43f2-af91-657d977c1b18.svg?style=for-the-badge
+[wakatime-url]: https://wakatime.com/@jqshuv/projects/ttqahjjgfm
+
 [banner]: .github/assets/short-banner.svg
 
 [cf-workers]: https://img.shields.io/badge/Cloudflare_Workers-ffffff?style=for-the-badge&logo=cloudflareworkers&logoColor=F38020
