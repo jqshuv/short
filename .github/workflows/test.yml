@@ -24,7 +24,16 @@ jobs:
         node-version: 20.x
         cache: 'pnpm'
     - name: 💽 Setup Enviroment
-      run: cp wrangler.example.toml wrangler.toml
+      run: |
+        cp wrangler.example.toml wrangler.toml
+        echo "[vars]" >> wrangler.toml
+        echo "AUTH_SECRET = \"production_value\" " >> wrangler.toml
+        echo "[[kv_namespaces]]" >> wrangler.toml
+        echo "binding = \"SHORT_URLS\"" >> wrangler.toml
+        echo "id = \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"" >> wrangler.toml
+      env:
+        AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
+        KV_NAMESPACE_ID: ${{ secrets.KV_NAMESPACE_ID }}
     - name: ⚙️ Install Dependencies
       run: pnpm install --frozen-lockfile
     - name: 📋 Test
