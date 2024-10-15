@@ -83,11 +83,11 @@ jobs:
           method: 'Update'
           branch: 'main'
           masterBranchName: 'main'
-          value: '${GITHUB_REF#refs/tags/v}'
+          value: ${{ github.ref_name }}
           token: ${{ secrets.GITHUB_TOKEN }}
           commitUserName: ${{ secrets.GH_NAME }}
           commitUserEmail: ${{ secrets.GH_EMAIL }}
           commitChange: true
-          message: 'refactor: update API version to ${GITHUB_REF#refs/tags/v}'
+          message: 'refactor: update API version to ${{ github.ref_name }}'
 
 
