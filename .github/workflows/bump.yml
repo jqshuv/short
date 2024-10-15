@@ -11,6 +11,10 @@ on:
     paths:
       - 'docs/api-docs.yaml'
       - '.github/workflows/bump.yml'
+  workflow_run:
+    workflows: ["🚀 Deploy"]
+    types:
+      - completed
 
 jobs:
   deploy-doc:
