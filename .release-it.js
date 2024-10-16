@@ -18,7 +18,7 @@ module.exports = {
         tagName: "v/${version}",
         tagAnnotation : "Release ${version}",
         tagArgs: ["-s"],
-        changelog: "pnpx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/cookpete/auto-changelog/refs/heads/master/templates/conventional.hbs --tag-prefix=v/",
+        changelog: "pnpx conventional-changelog-cli --from=${latestTag} --to=${tagName}",
     },
     github: {
         release: true,
