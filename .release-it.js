@@ -5,8 +5,7 @@
 
 module.exports = {
     hooks: {
-        "before:init": "echo \"${version}\"",
-        "before:bump": "echo ${version}",
+        "before:bump": "node scripts/change-api-version.js ${version}",
         "after:bump": "pnpx auto-changelog -p && git add CHANGELOG.md",
     },
     git: {
@@ -24,6 +23,7 @@ module.exports = {
     github: {
         release: true,
         releaseName: "🚀 Release ${version}",
+        releaseNotes: "echo \"${version}\" > .release-version",
         comments: {
             submit: false,
             issue: ":rocket: _This issue has been resolved in v${version}. See [${releaseName}](${releaseUrl}) for release notes._",
