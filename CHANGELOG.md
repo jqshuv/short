@@ -5,3 +5,121 @@
  https://opensource.org/licenses/MIT
 -->
 
+
+## ...v/1.0.0-rc.0
+
+
+### 🚀 Enhancements
+
+- Add vitepress dependency to package.json ([9353d3b](https://github.com/jqshuv/short/commit/9353d3b))
+- Add pre-commit and commit-msg hooks ([8f22ee7](https://github.com/jqshuv/short/commit/8f22ee7))
+- ⚡️  feat ([7233b0a](https://github.com/jqshuv/short/commit/7233b0a))
+
+### 💅 Refactors
+
+- Update API version to ${GITHUB_REF#refs/tags/v} ([fbf19e0](https://github.com/jqshuv/short/commit/fbf19e0))
+- Update API version to v/0.1.9 ([cee5a6b](https://github.com/jqshuv/short/commit/cee5a6b))
+- Update API version to ([20a587f](https://github.com/jqshuv/short/commit/20a587f))
+- Update API version to v/0.1.11 ([12808ad](https://github.com/jqshuv/short/commit/12808ad))
+- Update README.md with instructions for setting up Cloudflare API Key and KV Namespace ([cfeff0b](https://github.com/jqshuv/short/commit/cfeff0b))
+- Update README.md with instructions for setting up Cloudflare API Key and KV Namespace ([195ba81](https://github.com/jqshuv/short/commit/195ba81))
+- Update README.md with instructions for setting up Cloudflare API Key and KV Namespace ([6327b03](https://github.com/jqshuv/short/commit/6327b03))
+- Update API version to v/0.1.12 ([2f373d4](https://github.com/jqshuv/short/commit/2f373d4))
+- Update README.md with instructions for setting up Cloudflare API Key and KV Namespace ([62f0843](https://github.com/jqshuv/short/commit/62f0843))
+- Update SECURITY.md with supported versions and vulnerability reporting instructions ([fa978b0](https://github.com/jqshuv/short/commit/fa978b0))
+- Update SECURITY.md with improved vulnerability reporting instructions ([d4b854e](https://github.com/jqshuv/short/commit/d4b854e))
+- Update test job name in GitHub workflows ([78d36bb](https://github.com/jqshuv/short/commit/78d36bb))
+- Update package.json with author information ([66eccaf](https://github.com/jqshuv/short/commit/66eccaf))
+- Update release.config.mjs to us...v/1.0.0-rc.0' branch instead of 'master' ([93d610f](https://github.com/jqshuv/short/commit/93d610f))
+- Update release.config.mjs to us...v/1.0.0-rc.0' branch instead of 'master' ([87a64a3](https://github.com/jqshuv/short/commit/87a64a3))
+- Update release.config.mjs to us...v/1.0.0-rc.0' branch instead of 'master' ([042d047](https://github.com/jqshuv/short/commit/042d047))
+- 🎨  test ([c56d5eb](https://github.com/jqshuv/short/commit/c56d5eb))
+- Update release.config.mjs to us...v/1.0.0-rc.0' branch instead of 'master' ([04aac06](https://github.com/jqshuv/short/commit/04aac06))
+- Add @release-it/conventional-changelog plugin to package.json ([b653ef2](https://github.com/jqshuv/short/commit/b653ef2))
+- Update @release-it/conventional-changelog plugin configuration ([b6464d0](https://github.com/jqshuv/short/commit/b6464d0))
+- Update @release-it/conventional-changelog plugin configuration ([a17587e](https://github.com/jqshuv/short/commit/a17587e))
+- Update release-it configuration to use @release-it/keep-a-changelog plugin ([24abedf](https://github.com/jqshuv/short/commit/24abedf))
+- Add @release-it/keep-a-changelog plugin to package.json and pnpm-lock.yaml ([64d38f5](https://github.com/jqshuv/short/commit/64d38f5))
+- Add MIT License to CHANGELOG.md ([7eb557a](https://github.com/jqshuv/short/commit/7eb557a))
+- Update release-it configuration and add @release-it/keep-a-changelog plugin ([972d67b](https://github.com/jqshuv/short/commit/972d67b))
+- Update version placeholder in docs/api-docs.yaml ([8301a73](https://github.com/jqshuv/short/commit/8301a73))
+- Update version placeholder in docs/api-docs.yaml ([efdb250](https://github.com/jqshuv/short/commit/efdb250))
+- Update version placeholder in docs/api-docs.yaml and remove unused hook ([fc9c388](https://github.com/jqshuv/short/commit/fc9c388))
+- Update API version to v/0.3.0 ([9a6d8ac](https://github.com/jqshuv/short/commit/9a6d8ac))
+- Update release-it configuration and add auto-changelog hook ([a672ed8](https://github.com/jqshuv/short/commit/a672ed8))
+- Remove unused release workflow and update release-it configuration ([fac2d06](https://github.com/jqshuv/short/commit/fac2d06))
+- Update release-it configuration and add auto-changelog hook ([e3e3e4b](https://github.com/jqshuv/short/commit/e3e3e4b))
+- Update API version to v/0.3.1 ([4553156](https://github.com/jqshuv/short/commit/4553156))
+- Remove unused release workflow and update release-it configuration ([1eeed06](https://github.com/jqshuv/short/commit/1eeed06))
+- Update release-it configuration to use pnpx instead of npx ([fe6f4db](https://github.com/jqshuv/short/commit/fe6f4db))
+- Update release-it configuration to use pnpx instead of npx ([bde62e3](https://github.com/jqshuv/short/commit/bde62e3))
+- Update package.json version to 0.0.0 ([9340faa](https://github.com/jqshuv/short/commit/9340faa))
+- Update release-it configuration to use pnpx instead of npx ([0304c27](https://github.com/jqshuv/short/commit/0304c27))
+- Update release-it configuration to use pnpx instead of npx ([19a7fd3](https://github.com/jqshuv/short/commit/19a7fd3))
+- Update release-it configuration to use pnpx instead of npx ([babf6d5](https://github.com/jqshuv/short/commit/babf6d5))
+- Remove CHANGELOG.md file ([812bfdf](https://github.com/jqshuv/short/commit/812bfdf))
+- Update version to 0.0.0 in api-docs.yaml and package.json ([9a9af48](https://github.com/jqshuv/short/commit/9a9af48))
+- Update release-it configuration to use pnpx ([c060fc8](https://github.com/jqshuv/short/commit/c060fc8))
+- Update version to 0.0.0 in package.json ([58a7a0e](https://github.com/jqshuv/short/commit/58a7a0e))
+- Update release-it configuration to use pnpx ([1afe87b](https://github.com/jqshuv/short/commit/1afe87b))
+- Update release-it configuration to change the order of hooks ([f80348b](https://github.com/jqshuv/short/commit/f80348b))
+- Update release-it configuration to add git add command after generating auto-changelog ([c931fd4](https://github.com/jqshuv/short/commit/c931fd4))
+- Update release-it configuration to add git add command after generating auto-changelog ([8e5fa6e](https://github.com/jqshuv/short/commit/8e5fa6e))
+- Update API authentication logic to make the API public when AUTH_SECRET is not set ([2601883](https://github.com/jqshuv/short/commit/2601883))
+- Update release.config.mjs to us...v/1.0.0-rc.0' branch instead of 'master' ([34f811c](https://github.com/jqshuv/short/commit/34f811c))
+- Aktualisiere release.config.mjs, um de...v/1.0.0-rc.0'-Branch anstelle von 'master' zu verwenden ([5c720be](https://github.com/jqshuv/short/commit/5c720be))
+- Release.config.mjs to us...v/1.0.0-rc.0' branch instead of 'master' ([949fd1f](https://github.com/jqshuv/short/commit/949fd1f))
+- Remove unnecessary argument in changelog command ([3b2ec2c](https://github.com/jqshuv/short/commit/3b2ec2c))
+- Update release configuration ([6819724](https://github.com/jqshuv/short/commit/6819724))
+- Update changelog command in release configuration ([147c6b7](https://github.com/jqshuv/short/commit/147c6b7))
+- Update release configuration and release notes generation ([4f08a45](https://github.com/jqshuv/short/commit/4f08a45))
+- Update release configuration and changelog command ([071fc7e](https://github.com/jqshuv/short/commit/071fc7e))
+- Update release configuration to echo the version ([a7688f8](https://github.com/jqshuv/short/commit/a7688f8))
+- Update release configuration to write version to .release-version ([c03de52](https://github.com/jqshuv/short/commit/c03de52))
+- Update release configuration to echo the version in before:init hook ([8924440](https://github.com/jqshuv/short/commit/8924440))
+- Update release configuration to echo the version in before:init hook ([fafa60a](https://github.com/jqshuv/short/commit/fafa60a))
+- Update release configuration to echo the version in before:bump hook ([ec9d405](https://github.com/jqshuv/short/commit/ec9d405))
+- Update release configuration to use a script for before:bump hook ([147d705](https://github.com/jqshuv/short/commit/147d705))
+- Update release configuration to use changelogen for release notes ([34629f5](https://github.com/jqshuv/short/commit/34629f5))
+- Update release configuration to use echo for release notes ([2ea34e6](https://github.com/jqshuv/short/commit/2ea34e6))
+- Update release configuration to use changelogen for release notes ([3e34d4e](https://github.com/jqshuv/short/commit/3e34d4e))
+- Update release configuration to use changelogen for release notes ([2cf4966](https://github.com/jqshuv/short/commit/2cf4966))
+- Update release configuration to use git log for changelog ([66cb14b](https://github.com/jqshuv/short/commit/66cb14b))
+- Update release configuration to use v/${version} for release notes ([c642aad](https://github.com/jqshuv/short/commit/c642aad))
+- Update release configuration to use escaped version in release notes ([22a3912](https://github.com/jqshuv/short/commit/22a3912))
+- Update release configuration to use changelogen for release notes ([3c2335e](https://github.com/jqshuv/short/commit/3c2335e))
+- Update release configuration to use escaped version in release notes ([5cdc142](https://github.com/jqshuv/short/commit/5cdc142))
+- Update release configuration to use escaped version in release notes ([830e821](https://github.com/jqshuv/short/commit/830e821))
+- Update version to 0.0.0 in api-docs.yaml and package.json ([20d27fb](https://github.com/jqshuv/short/commit/20d27fb))
+- Update release configuration to use escaped version in release notes ([01432d2](https://github.com/jqshuv/short/commit/01432d2))
+
+### 📖 Documentation
+
+- 📝  documentations change ([f965617](https://github.com/jqshuv/short/commit/f965617))
+- Add documentation page for the API ([d13be42](https://github.com/jqshuv/short/commit/d13be42))
+
+### 🏡 Chore
+
+- **release:** 0.3.0 ([50a67c6](https://github.com/jqshuv/short/commit/50a67c6))
+- **release:** 0.3.1 ([c80b8d8](https://github.com/jqshuv/short/commit/c80b8d8))
+- **release:** 0.3.2 ([6e83bea](https://github.com/jqshuv/short/commit/6e83bea))
+- **release:** 1.0.0-rc.0 ([ed27201](https://github.com/jqshuv/short/commit/ed27201))
+- **release:** 1.0.0-rc.0 ([5ed053d](https://github.com/jqshuv/short/commit/5ed053d))
+- **release:** 1.0.0-rc.0 ([2c25f8c](https://github.com/jqshuv/short/commit/2c25f8c))
+- **release:** 1.0.0 ([fb74065](https://github.com/jqshuv/short/commit/fb74065))
+- **release:** 🚀  1.0.1 ([8db3ef5](https://github.com/jqshuv/short/commit/8db3ef5))
+- **release:** 🚀  1.1.0 ([87e87ef](https://github.com/jqshuv/short/commit/87e87ef))
+- **release:** 🚀  1.1.1 ([e8b5cee](https://github.com/jqshuv/short/commit/e8b5cee))
+- **release:** 🚀  1.1.2 ([092d4f5](https://github.com/jqshuv/short/commit/092d4f5))
+- **release:** 🚀  1.1.3 ([ceba4c0](https://github.com/jqshuv/short/commit/ceba4c0))
+- **release:** 🚀  1.1.4 ([bfa2cc0](https://github.com/jqshuv/short/commit/bfa2cc0))
+- **release:** 🚀  1.1.5 ([c991f93](https://github.com/jqshuv/short/commit/c991f93))
+- **release:** 🚀  1.1.6 ([a673f1b](https://github.com/jqshuv/short/commit/a673f1b))
+- **release:** 🚀  1.1.7 ([c4783ae](https://github.com/jqshuv/short/commit/c4783ae))
+- **release:** 🚀  1.1.8 ([9837e82](https://github.com/jqshuv/short/commit/9837e82))
+
+### ❤️ Contributors
+
+- Joshua <schmitt@unately.com>
+- Joshua Schmitt <schmitt@unately.com>
+
