@@ -6,6 +6,19 @@
 -->
 
 
+## v/1.0.0-rc.0...v/1.0.0
+
+[compare changes](https://github.com/jqshuv/short/compare/v/1.0.0-rc.0...v/1.0.0)
+
+### 💅 Refactors
+
+- Update release configuration to use escaped version in release notes ([a8ad439](https://github.com/jqshuv/short/commit/a8ad439))
+- Update documentation for the short. URL shortener ([b6a6830](https://github.com/jqshuv/short/commit/b6a6830))
+
+### ❤️ Contributors
+
+- Joshua <schmitt@unately.com>
+
 ## ...v/1.0.0-rc.0
 
 
