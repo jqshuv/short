@@ -18,7 +18,7 @@ module.exports = {
         tagName: "v/${version}",
         tagAnnotation : "Release ${version}",
         tagArgs: ["-s"],
-        changelog: "CHANGELOG.md",
+        changelog: "git log ${latestTag}..HEAD --oneline --no-merges",
     },
     github: {
         release: true,
