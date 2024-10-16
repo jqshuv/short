@@ -6,7 +6,7 @@
 module.exports = {
     hooks: {
         "before:bump": "node scripts/change-api-version.js ${version}",
-        "after:bump": "pnpx auto-changelog -p && git add CHANGELOG.md",
+        "after:bump": "pnpx changelogen@latest --from=${latestTag} --to=${version} --output=CHANGELOG.md && git add CHANGELOG.md",
     },
     git: {
         commit: true,
@@ -18,12 +18,12 @@ module.exports = {
         tagName: "v/${version}",
         tagAnnotation : "Release ${version}",
         tagArgs: ["-s"],
-        changelog: "echo \"${version}\" > .release-version",
     },
     github: {
         release: true,
         releaseName: "🚀 Release ${version}",
-        releaseNotes: "echo ${latestTag} && echo ${tagName}",
+        // run npx changelogen@latest --from=${latestTag} and remove first line for release notes
+        releaseNotes: "pnpx changelogen@latest --from=${latestTag} | tail -n +4",
         comments: {
             submit: false,
             issue: ":rocket: _This issue has been resolved in v${version}. See [${releaseName}](${releaseUrl}) for release notes._",
