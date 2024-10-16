@@ -22,7 +22,8 @@ module.exports = {
     },
     github: {
         release: true,
-        releaseName: ":rocket: Release ${version}",
+        releaseName: "🚀 Release ${version}",
+        releaseNotes: "pnpx conventional-changelog-cli --from=${latestTag}",
         comments: {
             submit: false,
             issue: ":rocket: _This issue has been resolved in v${version}. See [${releaseName}](${releaseUrl}) for release notes._",
