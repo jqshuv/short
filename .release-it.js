@@ -18,12 +18,12 @@ module.exports = {
         tagName: "v/${version}",
         tagAnnotation : "Release ${version}",
         tagArgs: ["-s"],
+        changelog: "CHANGELOG.md",
     },
     github: {
         release: true,
         releaseName: "🚀 Release ${version}",
-        // run npx changelogen@latest --from=${latestTag} and remove first line for release notes
-        releaseNotes: "pnpx changelogen@latest --from=${latestTag} | tail -n +4",
+        releaseNotes: "pnpx changelogen@latest --from=${latestTag} | tail -n +4 | sed 's/...main/...v/${version}/g'",
         comments: {
             submit: false,
             issue: ":rocket: _This issue has been resolved in v${version}. See [${releaseName}](${releaseUrl}) for release notes._",
