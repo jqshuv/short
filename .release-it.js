@@ -7,7 +7,7 @@ module.exports = {
     hooks: {
         "before:bump": "node scripts/change-api-version.js ${version}",
         // edit the CHANGELOG.md file before the release with sed 's/...main/...v\\/${version}/g'
-        "before:release": "pnpx changelogen@latest --from=${latestTag} --output=CHANGELOG.md && sed -i '' 's/...main/...v\\/${version}/g' CHANGELOG.md && git add CHANGELOG.md",
+        "before:release": "pnpx changelogen@latest --output=CHANGELOG.md && sed -i '' 's/...main/...v\\/${version}/g' CHANGELOG.md && git add CHANGELOG.md",
     },
     git: {
         commit: true,
@@ -24,7 +24,7 @@ module.exports = {
     github: {
         release: true,
         releaseName: "🚀 Release ${version}",
-        releaseNotes: "pnpx changelogen@latest --from=${latestTag} | tail -n +4 | sed 's/...main/...v\\/${version}/g'",
+        releaseNotes: "pnpx changelogen@latest | tail -n +4 | sed 's/...main/...v\\/${version}/g'",
         comments: {
             submit: false,
             issue: ":rocket: _This issue has been resolved in v${version}. See [${releaseName}](${releaseUrl}) for release notes._",
