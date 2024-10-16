@@ -6,7 +6,7 @@
 module.exports = {
     hooks: {
         "before:init": "echo \"${version}\"",
-        "before:bump": "node scripts/change-api-version.js ${version}",
+        "before:bump": "echo ${version}",
         "after:bump": "pnpx auto-changelog -p && git add CHANGELOG.md",
     },
     git: {
