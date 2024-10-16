@@ -18,7 +18,7 @@ module.exports = {
         tagName: "v/${version}",
         tagAnnotation : "Release ${version}",
         tagArgs: ["-s"],
-        changelog: "pnpx conventional-changelog-cli --from=${latestTag} --to=${tagName}",
+        changelog: "pnpx conventional-changelog-cli --from=${latestTag}",
     },
     github: {
         release: true,
