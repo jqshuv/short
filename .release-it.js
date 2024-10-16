@@ -18,11 +18,11 @@ module.exports = {
         tagName: "v/${version}",
         tagAnnotation : "Release ${version}",
         tagArgs: ["-s"],
-        changelog: "pnpx changelogen@latest --from=${latestTag}",
     },
     github: {
         release: true,
         releaseName: "🚀 Release ${version}",
+        releaseNotes: "pnpx changelogen@latest --from=${latestTag} --to=${tagName}",
         comments: {
             submit: false,
             issue: ":rocket: _This issue has been resolved in v${version}. See [${releaseName}](${releaseUrl}) for release notes._",
