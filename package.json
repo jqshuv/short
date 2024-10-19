@@ -23,7 +23,8 @@
     "commitlint": "commitlint --edit",
     "release": "release-it",
     "release:beta": "release-it --preRelease=beta",
-    "release:rc": "release-it --preRelease=rc"
+    "release:rc": "release-it --preRelease=rc",
+    "coverage": "vitest --coverage"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.5.20",

@@ -40,14 +40,6 @@ jobs:
         echo "id = \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"" >> wrangler.toml
       env:
         KV_NAMESPACE_ID: ${{ secrets.CF_KV_ID }}
-
-    - name: ☂️ Coverage
-      uses: deepsourcelabs/test-coverage-action@v1.1.2
-      with:
-        key: javascript
-        coverage-file: coverage.xml
-        dsn: ${{ secrets.DEEPSOURCE_DSN }}
-
     - name: ⚙️ Install Dependencies
       run: pnpm install --frozen-lockfile
     - name: 📋 Test

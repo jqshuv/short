@@ -6,6 +6,6 @@ export default defineWorkersConfig({
 			workers: {
 				wrangler: { configPath: './wrangler.toml' },
 			},
-		},
+		}
 	},
 });
