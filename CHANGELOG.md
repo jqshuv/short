@@ -6,6 +6,18 @@
 -->
 
 
+## v/1.1.0...v/1.1.1
+
+[compare changes](https://github.com/jqshuv/short/compare/v/1.1.0...v/1.1.1)
+
+### 🏡 Chore
+
+- Update pnpm version to 9.12.2 in package.json and workflows ([278c15e](https://github.com/jqshuv/short/commit/278c15e))
+
+### ❤️ Contributors
+
+- Joshua <schmitt@unately.com>
+
 ## v/1.0.0...v/1.1.0
 
 [compare changes](https://github.com/jqshuv/short/compare/v/1.0.0...v/1.1.0)

@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: short
-  version: 1.1.0
+  version: 1.1.1
   description: Short simple url shortener.
 servers:
   - url: https://s.jqshuv.com
