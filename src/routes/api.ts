@@ -95,7 +95,7 @@ export default {
 
     // Check the request method and perform the appropriate action.
 		switch (request.method) {
-			case 'POST':
+			case 'POST': {
         // Define the variables for the expiration time.
         let expire: number | undefined;
 
@@ -143,7 +143,9 @@ export default {
 
 				// Return the response.
 				return new Response(JSON.stringify({ status: "succesfully_created", shortcode: postShortCode, redirect: postRedirectUrl }), { status: 201 });
-			case 'PUT':
+			}
+
+      case 'PUT': {
         // Check if the body is valid.
 				if (!body) return new Response('Bad Request', { status: 400 });
 
@@ -167,7 +169,9 @@ export default {
 
         // Return the response.
 				return new Response(JSON.stringify({ status: "succesfully_updated", shortcode: putShortCode, redirect: putRedirectUrl }), { status: 200 });
-			case 'DELETE':
+			}
+
+      case 'DELETE': {
         // Check if the body is valid.
 				if (!body) return new Response(JSON.stringify({ status: "no_body_provided" }), { status: 400 });
 
@@ -188,9 +192,12 @@ export default {
 
         // Return the response.
 				return new Response(JSON.stringify({ status: "succesfully_deleted" }), { status: 200 });
-			default:
+      }
+
+			default: {
         // Return an error if the request method is not allowed.
 				return new Response('Method Not Allowed', { status: 405 });
+      }
 		}
-    }
+  }
 } satisfies ExportedHandler<Env>;
