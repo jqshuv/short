@@ -105,12 +105,18 @@ export default {
         // Check if the short code is too long.
         if (body.shortcode && body.shortcode.length > 30) return new Response(JSON.stringify({ status: "shortcode_too_long" }), { status: 400 });
 
+        // Check if the expiration time is provided.
         if (body.expire) {
+          // Get the expiration time in minutes.
           expire = body.expire * 60;
+
           // Check if the expiration time is valid.
           if (expire < 0 || expire > 525600) return new Response(JSON.stringify({ status: "invalid_expire_time" }), { status: 400 });
+
+          // Set the expiration time to undefined if it is 0.
           if (expire === 0) expire = undefined;
         } else {
+          // Set the expiration time to undefined if it is not provided.
           expire = undefined
         }
 
