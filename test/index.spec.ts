@@ -10,7 +10,7 @@ import worker from '../src/index';
 const IncomingRequest = Request<unknown, IncomingRequestCfProperties>;
 
 describe('Hello World worker', () => {
-	var shortCode = '';
+	let shortCode = '';
 
 	it('index response', async () => {
 		const request = new IncomingRequest('http://example.com', { method: 'GET' });
