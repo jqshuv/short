@@ -56,9 +56,54 @@ paths:
                   status:
                     type: string
                 required:
-                  - data
+                  - status
                   - shortcode
                   - redirect
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: ""
+                    enum:
+                      - shortcode_too_long
+                      - invalid_expire_time
+                required:
+                  - status
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: ""
+                    default: unauthorized
+                    enum:
+                      - unauthorized
+                required:
+                  - status
+        "409":
+          description: Shortcode already exists
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: ""
+                    default: shortcode_already_exists
+                    enum:
+                      - shortcode_already_exists
+                required:
+                  - status
       requestBody:
         required: true
         description: ''
@@ -71,6 +116,11 @@ paths:
                   type: string
                 shortcode:
                   type: string
+                expire:
+                  type: number
+                  minimum: 0
+                  maximum: 525600
+                  description: The number of minutes before the shortcode expires. Default is 0, which means never expires.
               required:
                 - redirect
       security:

@@ -161,7 +161,9 @@ _For detailed documentation, please refer to the [API Documentation](https://exa
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Add a documentation page for the API.
+- [ ] Simple web interface to create and manage links.
+- [ ] Custom link expiration.
+- [ ] Custom link statistics.
 
 See the [open issues](https://github.com/jqshuv/short/issues) for a full list of proposed features (and known issues).
 

@@ -67,7 +67,7 @@ function authorizeRequest(request: Request, env: Env): boolean {
 export default {
 	async fetch(request, env): Promise<Response> {
       // Define the body of the request.
-		let body: { shortcode?: string, redirect: string } | undefined;
+		let body: { shortcode?: string, redirect: string, expire?: number } | undefined;
 
     // Check if the request method is allowed. Also, check if the request is valid.
 		if (request.method === 'POST' || request.method === 'PUT' || request.method === 'DELETE') {
@@ -90,17 +90,29 @@ export default {
 
     // Check if the request is authorized.
 		if (!authorizeRequest(request, env) && request.method !== 'GET') {
-			return new Response('Unauthorized', { status: 401 });
+			return new Response(JSON.stringify({ status: 'unauthorized' }), { status: 401 });
 		}
 
     // Check the request method and perform the appropriate action.
 		switch (request.method) {
 			case 'POST':
+        // Define the variables for the expiration time.
+        let expire: number | undefined;
+
         // Check if the body is valid.
 				if (!body) return new Response('Bad Request', { status: 400 });
 
         // Check if the short code is too long.
         if (body.shortcode && body.shortcode.length > 30) return new Response(JSON.stringify({ status: "shortcode_too_long" }), { status: 400 });
+
+        if (body.expire) {
+          expire = body.expire * 60;
+          // Check if the expiration time is valid.
+          if (expire < 0 || expire > 525600) return new Response(JSON.stringify({ status: "invalid_expire_time" }), { status: 400 });
+          if (expire === 0) expire = undefined;
+        } else {
+          expire = undefined
+        }
 
         // Check if the short code already exists.
         if (body.shortcode) {
@@ -117,8 +129,11 @@ export default {
         // Get the redirect URL from the body.
 				const postRedirectUrl = body.redirect;
 
+
         // Check if the short code already exists.
-				await env.SHORT_URLS.put(postShortCode, postRedirectUrl);
+				await env.SHORT_URLS.put(postShortCode, postRedirectUrl, {
+          expirationTtl: expire
+        });
 
 				// Return the response.
 				return new Response(JSON.stringify({ status: "succesfully_created", shortcode: postShortCode, redirect: postRedirectUrl }), { status: 201 });
