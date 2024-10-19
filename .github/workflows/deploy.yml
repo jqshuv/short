@@ -47,7 +47,7 @@ jobs:
       - name: 📦 Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 9.12.2
       - name: 💽 Setup Enviroment
         # echo "[vars]" >> wrangler.toml
         # echo "AUTH_SECRET = \"${SHORT_API_KEY}\" " >> wrangler.toml
