@@ -234,8 +234,7 @@ Project Link: [https://github.com/jqshuv/short](https://github.com/jqshuv/short)
 
 <!-- LEGAL -->
 # Legal
-* Cloudflare, the Cloudflare logo, and the Cloudflare Workers® logo are registered trademarks of Cloudflare, Inc. in the United States and other countries.
-* Cloudflare Workers® is a registered trademark of Cloudflare, Inc. in the United States and other countries.
+* Cloudflare, the Cloudflare logo, Cloudflare Workers® adn the Cloudflare Workers® logo are registered trademarks of Cloudflare, Inc. in the United States and other countries.
 * GitHub, GITHUB, the GitHub logo(s), and the GitHub Actions logo are registered trademarks of GitHub, Inc. in the United States and other countries.
 
 Me and this project are not affiliated with Cloudflare, Inc. or GitHub, Inc. in any way. The use of the trademarks is only for identification and explanation purposes. The use of the trademarks does not imply any endorsement by the trademark owners. If you have any questions or concerns, please contact me at me@jqshuv.com. I do not claim any ownership of the trademarks. All rights belong to their respective owners. Thank you for your understanding.
