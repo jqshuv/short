@@ -16,7 +16,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![Wakatime][wakatime-shield]](wakatime-url)
+[![Wakatime][wakatime-shield]][wakatime-url]
 
 
 
@@ -262,7 +262,7 @@ Me and this project are not affiliated with Cloudflare, Inc. or GitHub, Inc. in 
 [issues-url]: https://github.com/jqshuv/short/issues
 
 [license-shield]: https://img.shields.io/github/license/jqshuv/short.svg?style=for-the-badge
-[license-url]: https://github.com/jqshuv/short/blob/master/LICENSE.txt
+[license-url]: https://github.com/jqshuv/short/blob/master/LICENSE
 
 [wakatime-shield]: https://wakatime.com/badge/user/b80127f3-fcf6-417a-9cdd-107757c5022f/project/691d39e9-e109-43f2-af91-657d977c1b18.svg?style=for-the-badge
 [wakatime-url]: https://wakatime.com/@jqshuv/projects/ttqahjjgfm
