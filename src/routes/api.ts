@@ -22,21 +22,19 @@ function hasValidHeader(request: Request, env: Env): boolean {
 		const authHeader = request.headers.get('Authorization');
 
     // Check if the Authorization header is valid.
-		if (authHeader === env.AUTH_SECRET) {
-			return true;
-		} else {
-			return false;
-		}
+		if (authHeader === env.AUTH_SECRET) return true;
+
+    // Return false if the Authorization header is invalid.
+    return false;
 	} else if (searchParams.has('auth')) {
     // Get the auth query parameter from the request.
 		const authParam = searchParams.get('auth');
 
     // Check if the auth query parameter is valid.
-		if (authParam === env.AUTH_SECRET) {
-			return true;
-		} else {
-			return false;
-		}
+		if (authParam === env.AUTH_SECRET) return true;
+
+    // Return false if the auth query parameter is invalid.
+    return false;
 	} else {
 		return false;
 	}
