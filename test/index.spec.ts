@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-import { env, createExecutionContext, waitOnExecutionContext, SELF } from 'cloudflare:test';
+import { env, createExecutionContext, waitOnExecutionContext } from 'cloudflare:test';
 import { describe, it, expect } from 'vitest';
 import worker from '../src/index';
 
@@ -19,7 +19,7 @@ describe('Hello World worker', () => {
 		const response = await worker.fetch(request, env);
 		// Wait for all `Promise`s passed to `ctx.waitUntil()` to settle before running test assertions
 		await waitOnExecutionContext(ctx);
-		expect(await response.text()).toMatchInlineSnapshot("just redirect. - powered by jqshuv x unately.");
+		expect(await response.text()).toMatchInlineSnapshot("\"just redirect. - powered by jqshuv x unately.\"");
 	});
 
 	it('post request url', async () => {
