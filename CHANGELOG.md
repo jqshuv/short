@@ -6,6 +6,30 @@
 -->
 
 
+## v/1.0.0...v/1.1.0
+
+[compare changes](https://github.com/jqshuv/short/compare/v/1.0.0...v/1.1.0)
+
+### 🚀 Enhancements
+
+- ✨  add expiration time to redirects ([a102e82](https://github.com/jqshuv/short/commit/a102e82))
+
+### 💅 Refactors
+
+- 🎨  improve format ([ed31429](https://github.com/jqshuv/short/commit/ed31429))
+- Update Cloudflare trademarks in README.md ([87515b7](https://github.com/jqshuv/short/commit/87515b7))
+- Update API ([3b6b7bb](https://github.com/jqshuv/short/commit/3b6b7bb))
+- Update pnpm version to 9.12.1 in package.json and workflows ([50d955f](https://github.com/jqshuv/short/commit/50d955f))
+- Update pnpm version to 9.12.2 in package.json and workflows ([f4bf566](https://github.com/jqshuv/short/commit/f4bf566))
+
+### 🏡 Chore
+
+- 📦️  add pnpm to package.json ([9395107](https://github.com/jqshuv/short/commit/9395107))
+
+### ❤️ Contributors
+
+- Joshua <schmitt@unately.com>
+
 ## v/1.0.0-rc.0...v/1.0.0
 
 [compare changes](https://github.com/jqshuv/short/compare/v/1.0.0-rc.0...v/1.0.0)
