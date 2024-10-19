@@ -16,10 +16,10 @@ describe('Hello World worker', () => {
 		const request = new IncomingRequest('http://example.com', { method: 'GET' });
 		// Create an empty context to pass to `worker.fetch()`.
 		const ctx = createExecutionContext();
-		const response = await worker.fetch(request, env, ctx);
+		const response = await worker.fetch(request, env);
 		// Wait for all `Promise`s passed to `ctx.waitUntil()` to settle before running test assertions
 		await waitOnExecutionContext(ctx);
-		expect(await response.text()).toMatchInlineSnapshot(`"just redirect. - powered by jqshuv x unately."`);
+		expect(await response.text()).toMatchInlineSnapshot("just redirect. - powered by jqshuv x unately.");
 	});
 
 	it('post request url', async () => {
