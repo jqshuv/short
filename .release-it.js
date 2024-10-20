@@ -8,6 +8,7 @@ module.exports = {
     "before:bump": "node scripts/change-api-version.js ${version}",
     // edit the CHANGELOG.md file before the release with sed 's/...main/...v\\/${version}/g'
     "before:release": "pnpx changelogen@latest --from=${latestTag} --output=CHANGELOG.md && sed -i '' 's/...main/...v\\/${version}/g' CHANGELOG.md && git add CHANGELOG.md",
+    "after:release": "git pull --tags && git checkout production && git merge main && git push && git checkout main",
   },
   git: {
     commit: true,
