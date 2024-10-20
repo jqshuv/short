@@ -8,4 +8,3 @@ rules:
   - base: production
     upstream: jqshuv:production    # change `wei` to the owner of upstream repo
     mergeMethod: hardreset
-    mergeUnstable: true

@@ -137,9 +137,10 @@ Before you get started, you need to have a few things ready:
    2. Click on the `🚀 Deploy` workflow on the left side.
    3. Click on the `Run workflow` button on the right side.
       1. Click on the `Branch: main` dropdown.
-      2. Select the menu `Tags` in the dropdown.
-      3. Select the latest tag. (The highest in the list)
+      2. Select the branch `production`.
    4. Run the workflow by clicking the green `Run workflow` button.
+
+4. (Recommended) Install the [pull app](https://github.com/apps/pull) to the repository. It will automatically update the production branch. Just install it and you are done, everything is preconfigured and will be updated automatically.
 
 #### 🚀 All done! How simple huh? Now you can see your worker active [here](https://dash.cloudflare.com/?to=/:account/workers-and-pages) in your Cloudflare dashboard.
 
