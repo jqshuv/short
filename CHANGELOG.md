@@ -6,6 +6,18 @@
 -->
 
 
+## v/1.2.0...v/1.2.1
+
+[compare changes](https://github.com/jqshuv/short/compare/v/1.2.0...v/1.2.1)
+
+### 💅 Refactors
+
+- Improve URL handling in fetch function and display version in index page ([cedcf0e](https://github.com/jqshuv/short/commit/cedcf0e))
+
+### ❤️ Contributors
+
+- Joshua <schmitt@unately.com>
+
 ## v/1.1.3...v/1.2.0
 
 [compare changes](https://github.com/jqshuv/short/compare/v/1.1.3...v/1.2.0)
