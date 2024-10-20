@@ -1,0 +1,11 @@
+# Copyright (c) 2024 Joshua Schmitt
+#
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
+
+version: "1"
+rules:
+  - base: production
+    upstream: jqshuv:production    # change `wei` to the owner of upstream repo
+    mergeMethod: hardreset
+    mergeUnstable: true
