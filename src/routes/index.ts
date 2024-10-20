@@ -7,7 +7,15 @@ export default {
 	async fetch(request, env): Promise<Response> {
     // Get the short code from the request URL.
     const requestUrl = new URL(request.url);
-    const shortCodeGet = requestUrl.pathname.slice(1);
+
+    // Get the short code from the URL path and remove the leading slash (/) and everything after the first slash.
+    const shortCodeGet = requestUrl.pathname.slice(1).split('/')[0];
+
+    // Get everything after the first slash.
+    const afterSlash = requestUrl.pathname.slice(1).split('/')[1];
+
+    // Get the search parameters from the request URL.
+    const searchParams = requestUrl.searchParams;
 
     // Check if the request method is allowed.
     if (request.method !== 'GET') return new Response('Method Not Allowed', { status: 405 });
@@ -20,7 +28,21 @@ export default {
 
     // Redirect to the URL if it exists. Otherwise, redirect to the GitHub repository.
     if (data) {
-      return Response.redirect(data, 302);
+      // Create a new URL object from the data.
+      let url = new URL(data);
+
+      // Set the pathname to the value after the first slash
+      if (afterSlash) {
+        url.pathname = afterSlash
+      }
+
+      // Set the search parameters to the value from the request URL.
+      if (searchParams.toString()) {
+        url.search = searchParams.toString();
+      }
+
+      // Redirect to the URL.
+      return Response.redirect(url.toString(), 302);
     } else {
       return Response.redirect('https://github.com/jqshuv/short', 302);
     }
