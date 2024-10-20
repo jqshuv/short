@@ -6,6 +6,7 @@
 import { env, createExecutionContext, waitOnExecutionContext } from 'cloudflare:test';
 import { describe, it, expect } from 'vitest';
 import worker from '../src/index';
+import { version } from '../package.json';
 
 const IncomingRequest = Request<unknown, IncomingRequestCfProperties>;
 
@@ -19,7 +20,7 @@ describe('Hello World worker', () => {
 		const response = await worker.fetch(request, env);
 		// Wait for all `Promise`s passed to `ctx.waitUntil()` to settle before running test assertions
 		await waitOnExecutionContext(ctx);
-		expect(await response.text()).toMatchInlineSnapshot("\"just redirect. - powered by jqshuv x unately.\"");
+		expect(await response.text()).toMatchInlineSnapshot(`"just redirect. (v${version}) - powered by jqshuv x unately."`);
 	});
 
 	it('post request url', async () => {
