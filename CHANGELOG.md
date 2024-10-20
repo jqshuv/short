@@ -6,6 +6,40 @@
 -->
 
 
+## v/1.1.1...v/1.1.2
+
+[compare changes](https://github.com/jqshuv/short/compare/v/1.1.1...v/1.1.2)
+
+### 🚀 Enhancements
+
+- Add pull.yml configuration file ([a9abbe0](https://github.com/jqshuv/short/commit/a9abbe0))
+- Add after:release script to mer...v/1.1.2 branch into production ([6b4293c](https://github.com/jqshuv/short/commit/6b4293c))
+
+### 🩹 Fixes
+
+- Fix readme ([902ef1a](https://github.com/jqshuv/short/commit/902ef1a))
+
+### 💅 Refactors
+
+- Update request handling in api.ts ([690ced9](https://github.com/jqshuv/short/commit/690ced9))
+- Update request handling in api.ts ([d5c9415](https://github.com/jqshuv/short/commit/d5c9415))
+- Update request handling in api.ts ([f80e4bb](https://github.com/jqshuv/short/commit/f80e4bb))
+- Easyer check in api ([a40485e](https://github.com/jqshuv/short/commit/a40485e))
+- Request handling in api.ts and update imports in index.spec.ts ([25609bb](https://github.com/jqshuv/short/commit/25609bb))
+- Variable declaration in index.spec.ts ([781cb31](https://github.com/jqshuv/short/commit/781cb31))
+- Test.yml to add coverage reporting using deepsourcelabs/test-coverage-action ([1da5ec2](https://github.com/jqshuv/short/commit/1da5ec2))
+- Remove unnecessary comma in vitest.config.mts ([853f431](https://github.com/jqshuv/short/commit/853f431))
+
+### 🤖 CI
+
+- Add .deepsource.toml ([1129416](https://github.com/jqshuv/short/commit/1129416))
+- Update .deepsource.toml ([5f9b3db](https://github.com/jqshuv/short/commit/5f9b3db))
+- Update .deepsource.toml ([8ecbcc4](https://github.com/jqshuv/short/commit/8ecbcc4))
+
+### ❤️ Contributors
+
+- Joshua <schmitt@unately.com>
+
 ## v/1.1.0...v/1.1.1
 
 [compare changes](https://github.com/jqshuv/short/compare/v/1.1.0...v/1.1.1)
