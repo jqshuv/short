@@ -6,6 +6,18 @@
 -->
 
 
+## v/1.1.3...v/1.2.0
+
+[compare changes](https://github.com/jqshuv/short/compare/v/1.1.3...v/1.2.0)
+
+### 💅 Refactors
+
+- Improve URL handling in fetch function ([5158679](https://github.com/jqshuv/short/commit/5158679))
+
+### ❤️ Contributors
+
+- Joshua <schmitt@unately.com>
+
 ## v/1.1.2...v/1.1.3
 
 [compare changes](https://github.com/jqshuv/short/compare/v/1.1.2...v/1.1.3)
