@@ -6,6 +6,18 @@
 -->
 
 
+## v/1.1.2...v/1.1.3
+
+[compare changes](https://github.com/jqshuv/short/compare/v/1.1.2...v/1.1.3)
+
+### 💅 Refactors
+
+- Remove unnecessary comma in vitest.config.mts ([f37c42b](https://github.com/jqshuv/short/commit/f37c42b))
+
+### ❤️ Contributors
+
+- Joshua <schmitt@unately.com>
+
 ## v/1.1.1...v/1.1.2
 
 [compare changes](https://github.com/jqshuv/short/compare/v/1.1.1...v/1.1.2)
