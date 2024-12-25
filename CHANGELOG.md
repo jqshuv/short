@@ -6,6 +6,18 @@
 -->
 
 
+## v/1.2.3...v/1.2.4
+
+[compare changes](https://github.com/jqshuv/short/compare/v/1.2.3...v/1.2.4)
+
+### 💅 Refactors
+
+- Update inline snapshot in index.spec.ts for improved clarity and branding ([74fb5b5](https://github.com/jqshuv/short/commit/74fb5b5))
+
+### ❤️ Contributors
+
+- Joshua <schmitt@unately.com>
+
 ## v/1.2.2...v/1.2.3
 
 [compare changes](https://github.com/jqshuv/short/compare/v/1.2.2...v/1.2.3)
