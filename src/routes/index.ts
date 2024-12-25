@@ -24,7 +24,7 @@ export default {
     if (request.method !== 'GET') return new Response('Method Not Allowed', { status: 405 });
 
     // Show index page if no short code is provided.
-    if (!shortCodeGet) return new Response(`just redirect. (v${version}) - powered by jqshuv x unately.`, { status: 200 });
+    if (!shortCodeGet) return new Response(`short. (v${version}) - created by @jqshuv - https://github.com/jqshuv/short`, { status: 200 });
 
     // Get the redirect URL from the short code.
     const data = await env.SHORT_URLS.get(shortCodeGet);
