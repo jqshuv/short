@@ -6,6 +6,18 @@
 -->
 
 
+## v/1.2.2...v/1.2.3
+
+[compare changes](https://github.com/jqshuv/short/compare/v/1.2.2...v/1.2.3)
+
+### 💅 Refactors
+
+- Update response message in index page for clarity and branding ([25fa530](https://github.com/jqshuv/short/commit/25fa530))
+
+### ❤️ Contributors
+
+- Joshua <schmitt@unately.com>
+
 ## v/1.2.1...v/1.2.2
 
 [compare changes](https://github.com/jqshuv/short/compare/v/1.2.1...v/1.2.2)
