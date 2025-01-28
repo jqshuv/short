@@ -153,7 +153,7 @@ Before you get started, you need to have a few things ready:
 
 Short provides a simple API to create and manage new links. The API is secured by an API key which you can set in the secrets of your repository.
 
-_For detailed documentation, please refer to the [API Documentation](https://example.com)_
+_For detailed documentation, please refer to the [API Documentation](https://s.jqshuv.com/apidocs)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
