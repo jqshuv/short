@@ -4,10 +4,10 @@
 
 We are currently supporting the following versions of the project:
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.2.x   | :white_check_mark: |
-| =< 1.1  | :x:                |
+| Version  | Supported          |
+| -------- | ------------------ |
+| 1.2.x    | :white_check_mark: |
+| =< 1.1.x | :x:                |
 
 ## Reporting a Vulnerability
 
