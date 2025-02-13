@@ -6,6 +6,28 @@
 -->
 
 
+## v/1.2.4...v/1.2.5
+
+[compare changes](https://github.com/jqshuv/short/compare/v/1.2.4...v/1.2.5)
+
+### 💅 Refactors
+
+- Remove unnecessary semicolons in change-api-version.js for consistency ([b663122](https://github.com/jqshuv/short/commit/b663122))
+
+### 📖 Documentation
+
+- Update README to reflect completion of custom link expiration feature ([1df590b](https://github.com/jqshuv/short/commit/1df590b))
+- Update API documentation link in README for accuracy ([2e6285f](https://github.com/jqshuv/short/commit/2e6285f))
+
+### 🏡 Chore
+
+- Update devDependencies and packageManager in package.json for compatibility ([d62d82e](https://github.com/jqshuv/short/commit/d62d82e))
+- Update Node.js version to 22 in GitHub workflows for consistency ([86a5033](https://github.com/jqshuv/short/commit/86a5033))
+
+### ❤️ Contributors
+
+- Joshua <schmitt@unately.com>
+
 ## v/1.2.3...v/1.2.4
 
 [compare changes](https://github.com/jqshuv/short/compare/v/1.2.3...v/1.2.4)
