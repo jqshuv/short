@@ -6,5 +6,5 @@
 version: "1"
 rules:
   - base: production
-    upstream: jqshuv:production    # change `wei` to the owner of upstream repo
+    upstream: jqshuv:production
     mergeMethod: hardreset
