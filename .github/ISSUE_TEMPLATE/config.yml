@@ -1,0 +1,13 @@
+# Copyright (c) 2025 Joshua Schmitt
+#
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
+
+blank_issues_enabled: true
+contact_links:
+  - name: Discord Server
+    url: https://discord.com/invite/BeYVQ3fhF4
+    about: Please ask and answer questions here.
+  - name: Security Advisories
+    url: https://github.com/jqshuv/short/security
+    about: Please report security vulnerabilities here.

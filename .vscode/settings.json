@@ -2,6 +2,7 @@
     "yaml.schemas": {
         "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/refs/heads/main/schemas/v3.1/schema.yaml": [
             "docs/api-docs.yaml"
-        ]
+        ],
+        "https://json.schemastore.org/github-issue-config.json": ".github/ISSUE_TEMPLATE/config.yml"
     }
 }
