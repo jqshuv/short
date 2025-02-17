@@ -104,6 +104,21 @@ paths:
                       - shortcode_already_exists
                 required:
                   - status
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: "Shortcode is blocked"
+                    default: shortcode_blocked
+                    enum:
+                      - shortcode_blocked
+                required:
+                  - status
       requestBody:
         required: true
         description: ''
@@ -152,6 +167,21 @@ paths:
                   - redirect
         '404':
           $ref: '#/components/responses/NotFound'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: "Shortcode is blocked"
+                    default: shortcode_blocked
+                    enum:
+                      - shortcode_blocked
+                required:
+                  - status
       requestBody:
         required: true
         description: Updates a redirect url.
@@ -179,6 +209,21 @@ paths:
       responses:
         '204':
           $ref: '#/components/responses/NoContent'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: "Shortcode is blocked"
+                    default: shortcode_blocked
+                    enum:
+                      - shortcode_blocked
+                required:
+                  - status
       security:
         - Authorization with Header: []
         - Authorization with Query: []

@@ -5,6 +5,7 @@
 
 // import version from package.json
 import { version } from '../../package.json';
+import { hardcodedCheck } from '../utils';
 
 export default {
 	async fetch(request, env): Promise<Response> {
@@ -25,6 +26,13 @@ export default {
 
     // Show index page if no short code is provided.
     if (!shortCodeGet) return new Response(`short. (v${version}) - created by @jqshuv - https://github.com/jqshuv/short`, { status: 200 });
+
+    const check = hardcodedCheck(shortCodeGet);
+    if (check) {
+      if (typeof check === 'string') {
+        return Response.redirect(check, 302);
+      }
+    }
 
     // Get the redirect URL from the short code.
     const data = await env.SHORT_URLS.get(shortCodeGet);
@@ -47,7 +55,9 @@ export default {
       // Redirect to the URL.
       return Response.redirect(url.toString(), 302);
     } else {
-      return Response.redirect('https://github.com/jqshuv/short', 302);
+      const newURL = new URL(requestUrl);
+      newURL.pathname = '404';
+      return Response.redirect(newURL.toString(), 302);
     }
   }
 } satisfies ExportedHandler<Env>;

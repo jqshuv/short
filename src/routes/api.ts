@@ -3,6 +3,8 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+import { hardcodedCheck } from "../utils";
+
 /**
  * Check if the request has a valid header.
  * @param request The user request.
@@ -114,7 +116,10 @@ export default {
 
         // Check if the short code already exists.
         if (body.shortcode) {
-            // Check if the short code already exists from the database.
+          // Check if the short code is hardcoded.
+          if (hardcodedCheck(body.shortcode)) return new Response(JSON.stringify({ status: "shortcode_blocked" }), { status: 403 });
+
+          // Check if the short code already exists from the database.
           const postExistingData = await env.SHORT_URLS.get(body.shortcode);
 
           // Return an error if the short code already exists.
@@ -124,9 +129,11 @@ export default {
         // Generate a short code if one is not provided
 				const postShortCode = body.shortcode || Math.random().toString(36).slice(2, 8);
 
+        // Check if the short code is hardcoded.
+        if (hardcodedCheck(postShortCode)) return new Response(JSON.stringify({ status: "shortcode_blocked" }), { status: 403 });
+
         // Get the redirect URL from the body.
 				const postRedirectUrl = body.redirect;
-
 
         // Check if the short code already exists.
 				await env.SHORT_URLS.put(postShortCode, postRedirectUrl, {
@@ -147,8 +154,11 @@ export default {
         // Get the redirect URL from the body.
 				const putRedirectUrl = body.redirect;
 
-                // Check if the short code is provided.
+        // Check if the short code is provided.
         if (!putShortCode) return new Response(JSON.stringify({ status: "no_shortcode_provided" }), { status: 400 });
+
+        // Check if the short code is hardcoded.
+        if (hardcodedCheck(putShortCode)) return new Response(JSON.stringify({ status: "shortcode_blocked" }), { status: 403 });
 
         // Check if the short code already exists.
         const putExistingData = await env.SHORT_URLS.get(putShortCode);
@@ -178,6 +188,9 @@ export default {
 
         // Return an error if the short code does not exist.
         if (!deleteExistingData) return new Response(JSON.stringify({ status: "shortcode_not_found" }), { status: 404 });
+
+        // Check if the short code is hardcoded.
+        if (hardcodedCheck(deleteExistingData)) return new Response(JSON.stringify({ status: "shortcode_blocked" }), { status: 403 });
 
         // Delete the short code from the database.
 				await env.SHORT_URLS.delete(deleteShortCode);
