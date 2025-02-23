@@ -40,7 +40,7 @@ export default {
     // Redirect to the URL if it exists. Otherwise, redirect to the GitHub repository.
     if (data) {
       // Create a new URL object from the data.
-      let url = new URL(data);
+      const url = new URL(data);
 
       // Set the pathname to the value after the first slash
       if (afterSlash) {
