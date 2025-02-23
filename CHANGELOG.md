@@ -6,6 +6,32 @@
 -->
 
 
+## v/1.2.5...v/1.2.6
+
+[compare changes](https://github.com/jqshuv/short/compare/v/1.2.5...v/1.2.6)
+
+### 🚀 Enhancements
+
+- Add GitHub issue template configuration and update VSCode settings ([6511508](https://github.com/jqshuv/short/commit/6511508))
+- Update issue template to replace Discord link with Discussions link ([a2da6f2](https://github.com/jqshuv/short/commit/a2da6f2))
+- Add custom 404 error page with project link ([91c7221](https://github.com/jqshuv/short/commit/91c7221))
+- Implement shortcode blocking with hardcoded links and add 403 response handling ([83384d8](https://github.com/jqshuv/short/commit/83384d8))
+- Add single test command and update dependencies ([0ffa6a6](https://github.com/jqshuv/short/commit/0ffa6a6))
+
+### 📖 Documentation
+
+- Update supported versions in SECURITY.md for accuracy ([b35aa57](https://github.com/jqshuv/short/commit/b35aa57))
+
+### 🏡 Chore
+
+- Update upstream repository reference in pull request workflow ([ee9a52c](https://github.com/jqshuv/short/commit/ee9a52c))
+- **deps-dev:** Bump vitest from 2.0.5 to 2.1.9 ([9fcd3f1](https://github.com/jqshuv/short/commit/9fcd3f1))
+- **deps-dev:** Update devDependencies to latest versions ([da20ee6](https://github.com/jqshuv/short/commit/da20ee6))
+
+### ❤️ Contributors
+
+- Joshua <schmitt@unately.com>
+
 ## v/1.2.4...v/1.2.5
 
 [compare changes](https://github.com/jqshuv/short/compare/v/1.2.4...v/1.2.5)
