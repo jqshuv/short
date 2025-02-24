@@ -6,6 +6,18 @@
 -->
 
 
+## v/1.2.6...v/1.2.7
+
+[compare changes](https://github.com/jqshuv/short/compare/v/1.2.6...v/1.2.7)
+
+### 🚀 Enhancements
+
+- Add @release-it/bumper plugin for version management in API docs ([e7473e5](https://github.com/jqshuv/short/commit/e7473e5))
+
+### ❤️ Contributors
+
+- Joshua <schmitt@unately.com>
+
 ## v/1.2.5...v/1.2.6
 
 [compare changes](https://github.com/jqshuv/short/compare/v/1.2.5...v/1.2.6)

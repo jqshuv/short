@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: short
-  version: 1.2.6
+  version: 1.2.7
   description: Short simple url shortener.
 servers:
   - url: https://s.jqshuv.com
@@ -19,7 +19,9 @@ paths:
         - $ref: '#/components/parameters/shortcode'
       responses:
         '302':
-          description: The requested resource resides temporarily at a different URI, as indicated by the Location header in the response.
+          description: >-
+            The requested resource resides temporarily at a different URI, as
+            indicated by the Location header in the response.
           content:
             application/json:
               schema:
@@ -59,7 +61,7 @@ paths:
                   - status
                   - shortcode
                   - redirect
-        "400":
+        '400':
           description: Bad Request
           content:
             application/json:
@@ -68,13 +70,13 @@ paths:
                 properties:
                   status:
                     type: string
-                    description: ""
+                    description: ''
                     enum:
                       - shortcode_too_long
                       - invalid_expire_time
                 required:
                   - status
-        "401":
+        '401':
           description: Unauthorized
           content:
             application/json:
@@ -83,28 +85,13 @@ paths:
                 properties:
                   status:
                     type: string
-                    description: ""
+                    description: ''
                     default: unauthorized
                     enum:
                       - unauthorized
                 required:
                   - status
-        "409":
-          description: Shortcode already exists
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                    description: ""
-                    default: shortcode_already_exists
-                    enum:
-                      - shortcode_already_exists
-                required:
-                  - status
-        "403":
+        '403':
           description: Forbidden
           content:
             application/json:
@@ -113,10 +100,25 @@ paths:
                 properties:
                   status:
                     type: string
-                    description: "Shortcode is blocked"
+                    description: Shortcode is blocked
                     default: shortcode_blocked
                     enum:
                       - shortcode_blocked
+                required:
+                  - status
+        '409':
+          description: Shortcode already exists
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: ''
+                    default: shortcode_already_exists
+                    enum:
+                      - shortcode_already_exists
                 required:
                   - status
       requestBody:
@@ -135,7 +137,9 @@ paths:
                   type: number
                   minimum: 0
                   maximum: 525600
-                  description: The number of minutes before the shortcode expires. Default is 0, which means never expires.
+                  description: >-
+                    The number of minutes before the shortcode expires. Default
+                    is 0, which means never expires.
               required:
                 - redirect
       security:
@@ -165,9 +169,7 @@ paths:
                   - data
                   - shortcode
                   - redirect
-        '404':
-          $ref: '#/components/responses/NotFound'
-        "403":
+        '403':
           description: Forbidden
           content:
             application/json:
@@ -176,12 +178,14 @@ paths:
                 properties:
                   status:
                     type: string
-                    description: "Shortcode is blocked"
+                    description: Shortcode is blocked
                     default: shortcode_blocked
                     enum:
                       - shortcode_blocked
                 required:
                   - status
+        '404':
+          $ref: '#/components/responses/NotFound'
       requestBody:
         required: true
         description: Updates a redirect url.
@@ -209,7 +213,7 @@ paths:
       responses:
         '204':
           $ref: '#/components/responses/NoContent'
-        "403":
+        '403':
           description: Forbidden
           content:
             application/json:
@@ -218,7 +222,7 @@ paths:
                 properties:
                   status:
                     type: string
-                    description: "Shortcode is blocked"
+                    description: Shortcode is blocked
                     default: shortcode_blocked
                     enum:
                       - shortcode_blocked
@@ -246,7 +250,9 @@ components:
       in: query
   responses:
     NotFound:
-      description: The server cannot find the requested resource. The endpoint may be invalid or the resource may no longer exist.
+      description: >-
+        The server cannot find the requested resource. The endpoint may be
+        invalid or the resource may no longer exist.
       content:
         application/json:
           schema:
@@ -257,7 +263,9 @@ components:
             required:
               - message
     NoContent:
-      description: The request was successful, but there is no content to return in the response.
+      description: >-
+        The request was successful, but there is no content to return in the
+        response.
       content:
         application/json:
           schema:
