@@ -6,6 +6,22 @@
 -->
 
 
+## v/1.2.7...v/1.2.8
+
+[compare changes](https://github.com/jqshuv/short/compare/v/1.2.7...v/1.2.8)
+
+### 🚀 Enhancements
+
+- Remove change-api-version script as it is no longer needed ([f0406ee](https://github.com/jqshuv/short/commit/f0406ee))
+
+### 🔥 Performance
+
+- ⬆️  update ([f3b39e4](https://github.com/jqshuv/short/commit/f3b39e4))
+
+### ❤️ Contributors
+
+- Joshua <schmitt@unately.com>
+
 ## v/1.2.6...v/1.2.7
 
 [compare changes](https://github.com/jqshuv/short/compare/v/1.2.6...v/1.2.7)
