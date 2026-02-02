@@ -39,6 +39,8 @@ jobs:
     steps:
       - name: ⬇️ Checkout
         uses: actions/checkout@v6
+      - name: 📦 Install bun
+        uses: oven-sh/setup-bun@v2
       - name: 💽 Setup Enviroment
         # echo "[vars]" >> wrangler.toml
         # echo "AUTH_SECRET = \"${SHORT_API_KEY}\" " >> wrangler.toml
