@@ -6,6 +6,18 @@
 -->
 
 
+## v/1.3.0...v/1.3.1
+
+[compare changes](https://github.com/jqshuv/short/compare/v/1.3.0...v/1.3.1)
+
+### 🩹 Fixes
+
+- Ensure bun installation step is included in the deploy job ([e671052](https://github.com/jqshuv/short/commit/e671052))
+
+### ❤️ Contributors
+
+- Joshua Schmitt ([@jqshuv](https://github.com/jqshuv))
+
 ## v/1.2.8...v/1.3.0
 
 [compare changes](https://github.com/jqshuv/short/compare/v/1.2.8...v/1.3.0)
