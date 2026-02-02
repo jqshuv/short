@@ -33,6 +33,8 @@ jobs:
         KV_NAMESPACE_ID: ${{ secrets.CF_KV_ID }}
     - name: ⚙️ Install Dependencies
       run: bun install --frozen-lockfile
+    - name: 🧪 Run Tests
+      run: bun run test
 
   docs:
     name: 🧪 Build Documentation

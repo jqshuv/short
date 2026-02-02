@@ -20,7 +20,9 @@ describe('Hello World worker', () => {
 		const response = await worker.fetch(request, env);
 		// Wait for all `Promise`s passed to `ctx.waitUntil()` to settle before running test assertions
 		await waitOnExecutionContext(ctx);
-		expect(await response.text()).toMatchInlineSnapshot(`"short. (v${version}) - created by @jqshuv - https://github.com/jqshuv/short"`);
+    expect(response.status).toBe(302);
+    expect(response.headers.get('Location')).toBe('https://github.com/jqshuv/short');
+
 	});
 
 	it('post request url', async () => {
