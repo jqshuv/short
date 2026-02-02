@@ -6,6 +6,31 @@
 -->
 
 
+## v/1.2.8...v/1.3.0
+
+[compare changes](https://github.com/jqshuv/short/compare/v/1.2.8...v/1.3.0)
+
+### 🚀 Enhancements
+
+- ⚡️  updates ([aeb9726](https://github.com/jqshuv/short/commit/aeb9726))
+- Redirect to GitHub repository if no short code is provided ([05dcb8e](https://github.com/jqshuv/short/commit/05dcb8e))
+
+### 🩹 Fixes
+
+- Update test command from pnpm to bun ([e367454](https://github.com/jqshuv/short/commit/e367454))
+
+### 💅 Refactors
+
+- ♻️  refactor ([1b06406](https://github.com/jqshuv/short/commit/1b06406))
+
+### 🏡 Chore
+
+- Update vitest version and improve tests ([dc9d562](https://github.com/jqshuv/short/commit/dc9d562))
+
+### ❤️ Contributors
+
+- Joshua Schmitt ([@jqshuv](https://github.com/jqshuv))
+
 ## v/1.2.7...v/1.2.8
 
 [compare changes](https://github.com/jqshuv/short/compare/v/1.2.7...v/1.2.8)
