@@ -25,7 +25,9 @@ export default {
     if (request.method !== 'GET') return new Response('Method Not Allowed', { status: 405 });
 
     // Show index page if no short code is provided.
-    if (!shortCodeGet) return new Response(`short. (v${version}) - created by @jqshuv - https://github.com/jqshuv/short`, { status: 200 });
+    // if (!shortCodeGet) return new Response(`short. (v${version}) - created by @jqshuv - https://github.com/jqshuv/short`, { status: 200 });
+
+    if (!shortCodeGet) return Response.redirect('https://github.com/jqshuv/short', 302);
 
     const check = hardcodedCheck(shortCodeGet);
     if (check) {
