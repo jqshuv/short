@@ -28,23 +28,17 @@
     "coverage": "vitest --coverage"
   },
   "devDependencies": {
-    "@cloudflare/vitest-pool-workers": "^0.6.16",
-    "@cloudflare/workers-types": "^4.20250416.0",
-    "@commitlint/cli": "^19.8.0",
-    "@commitlint/config-conventional": "^19.8.0",
-    "@release-it/bumper": "^7.0.2",
-    "@release-it/conventional-changelog": "^10.0.0",
+    "@cloudflare/vitest-pool-workers": "^0.12.8",
+    "@cloudflare/workers-types": "^4.20260131.0",
+    "@commitlint/cli": "^20.4.1",
+    "@commitlint/config-conventional": "^20.4.1",
+    "@release-it/bumper": "^7.0.5",
+    "@release-it/conventional-changelog": "^10.0.4",
     "husky": "^9.1.7",
-    "release-it": "^18.1.2",
-    "typescript": "^5.8.3",
-    "vitepress": "^1.6.3",
-    "vitest": "2.1.9",
-    "wrangler": "^4.11.1"
-  },
-  "packageManager": "pnpm@10.8.1+sha512.c50088ba998c67b8ca8c99df8a5e02fd2ae2e2b29aaf238feaa9e124248d3f48f9fb6db2424949ff901cffbb5e0f0cc1ad6aedb602cd29450751d11c35023677",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "workerd"
-    ]
+    "release-it": "^19.2.4",
+    "typescript": "^5.9.3",
+    "vitepress": "^1.6.4",
+    "vitest": "4.0.18",
+    "wrangler": "^4.61.1"
   }
 }
