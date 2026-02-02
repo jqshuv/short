@@ -5,7 +5,7 @@
 
 module.exports = {
   hooks: {
-    "before:init": "pnpm test:single",
+    "before:init": "bun test:single",
     // "before:bump": "node scripts/change-api-version.js ${version}",
     // edit the CHANGELOG.md file before the release with sed 's/...main/...v\\/${version}/g'
     "before:release": "bunx changelogen@latest --from=${latestTag} --output=CHANGELOG.md && sed -i '' 's/...main/...v\\/${version}/g' CHANGELOG.md && git add CHANGELOG.md",
